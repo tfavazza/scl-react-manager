@@ -1,15 +1,17 @@
 .App {
-  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .App-logo {
-  height: 300px;
-}
+  position: left;
+  background-size: 400px;
 
+}
 .App-header {
-  background-color: #111;
-  height: 300px;
-  padding: 20px;
+  text-align: center;
+  background-color: #fefefe;
+  height: 400px;
+  padding: 10px;
   color: white;
 }
 
@@ -19,4 +21,151 @@
 
 .App-intro {
   font-size: large;
+}
+.rt-td {
+  font-weight: bold
+}
+
+.player-names {
+  font-weight: bold
+}
+
+[data-success] {
+    padding:5px 0;
+  }
+  
+[data-success="1"]:before {
+    content:"\a0";
+    display:block;
+    padding:2px 0;
+    line-height:1px;
+    border-top:8px solid #1C1; 
+}
+[data-success="0"]:before {
+    content:"\a0";
+    display:block;
+    padding:2px 0;
+    line-height:1px;
+    border-top:8px solid #CCC; 
+}
+[data-success="2"]:before {
+    content:"\a0";
+    display:block;
+    padding:2px 0;
+    line-height:1px;
+    border-top:8px solid #FF0000; 
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.padding {
+  padding: 2px;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+.Balcony {
+  background-image: url('./levels/balcony-blurred.png');
+}
+.Ballroom {
+  background-image: url('./levels/ballroom-blurred.png');
+}
+.Courtyard {
+  background-image: url('./levels/courtyard-blurred.png');
+}
+.Gallery {
+    background-image: url('./levels/gallery-blurred.png');
+}
+.High-Rise {
+  background-image: url('./levels/high-rise-blurred.png')
+}
+.Library {
+  background-image: url('./levels/library-blurred.png')
+}
+.Moderne {
+  background-image: url('./levels/moderne-blurred.png')
+}
+.Pub {
+  background-image: url('./levels/pub-blurred.png');
+}
+.Terrace {
+  background-image: url('./levels/terrace-blurred.png')
+}
+.Veranda {
+  background-image: url('./levels/veranda-blurred.png')
+}
+.Panopticon {
+  background-image: url('./levels/library-blurred.png');
+}
+.Modern {
+  background-image: url('./levels/moderne-blurred.png')
+}
+
+.white {
+  color: white;
+}
+.background-image {
+  background-size: cover;
+  margin: 4px 2px;
+  padding: 2px 10px 4px 5px;
+  -webkit-filter: grayscale(40%); /* Chrome, Safari, Opera */
+  filter: grayscale(40%);
+}
+.level-name {
+  text-align-last: right;
+  padding: 10px;
+}
+.recap-names {
+  padding: 0px 5px;
+}
+.white-image {
+  filter: invert(100%);
+}
+.button-stretch {
+    display: block;
+    width: 100%;
+}
+.less-padding {
+  padding: 0;
+  margin: 0;
+}
+.block {
+  flex-wrap: all
+}
+.selected {
+  background-color: grey;
+}
+.react-table {
+  margin: 20px;
+}
+
+.map {
+  display: block;
+}
+.map-figures {
+  display: inline-block;
+  max-width: 25%;
+  margin: 0 .25%;
+}
+.division-figures {
+  display: inline-block;
+  max-width: 25%;
+}
+.smaller-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+.cursor {
+  cursor: pointer;
+}
+.fix-modal {
+  padding: 10px;
 }
