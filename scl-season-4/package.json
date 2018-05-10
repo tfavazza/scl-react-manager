@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "flag-icon-css": "^3.0.0",
+    "match-sorter": "^2.2.1",
+    "npm": "^5.8.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-responsive-modal": "^3.0.1",
     "react-scripts": "1.1.0",
     "react-table": "^6.7.6"
   },
