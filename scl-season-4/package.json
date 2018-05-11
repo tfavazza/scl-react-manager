@@ -2,6 +2,7 @@
   "name": "scl-season-4",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tfavazza.github.io/scl-season-4",
   "dependencies": {
     "flag-icon-css": "^3.0.0",
     "match-sorter": "^2.2.3",
