@@ -85,17 +85,17 @@ class App extends Component {
     console.log(week);
     if (!week)
       {week = 1};
-    fetch("http://scl.spypartyfans.com/api/match/week/" + week)
+    fetch("https://scl.spypartyfans.com/api/match/week/" + week)
     .then(res => res.json())
     .then(res=> this.setState({gamesThisWeek: res}))
   };
 
   getLeagueStatus = (league) => {
-    fetch("http://scl.spypartyfans.com/api/match")
+    fetch("https://scl.spypartyfans.com/api/match")
   }
 
   getGameRecap = (id) => {
-    fetch("http://scl.spypartyfans.com/api/match/" + id)
+    fetch("https://scl.spypartyfans.com/api/match/" + id)
     .then(res=> res.json())
   .then(res => this.setState({recap: res, recapOpen: true}))
   .then(this.toggleModal)
@@ -110,7 +110,7 @@ class App extends Component {
     if (!league) {
       league = 'Diamond';
     }
-    fetch("http://scl.spypartyfans.com/api/league/" + league)
+    fetch("https://scl.spypartyfans.com/api/league/" + league)
     .then(res => res.json())
     .then(res => this.setState({standingsData: res}))
   }
@@ -127,7 +127,7 @@ class App extends Component {
   componentDidMount = () => {
     this.getGamesThisWeek(this.state.currentWeek);
     this.fetchSelectedLeague()
-    fetch("http://scl.spypartyfans.com/api/match/all")
+    fetch("https://scl.spypartyfans.com/api/match/all")
     .then(res => res.json())
     .then(res => this.setState( { matchData: res}))
     .then(this.setState({isThisWeekVisible: true}))
@@ -145,7 +145,7 @@ class App extends Component {
     e.preventDefault();
     const data = new FormData();
     data.append('file', this.state.file);
-    fetch('http://scl.spypartyfans.com/api/match/parse', {
+    fetch('https://scl.spypartyfans.com/api/match/parse', {
       method: 'POST',
       body: data
     })
@@ -164,7 +164,7 @@ class App extends Component {
   }
 
   getPlayerSchedule = (player) => {
-    fetch('http://scl.spypartyfans.com/api/player/' + player + '/matches')
+    fetch('https://scl.spypartyfans.com/api/player/' + player + '/matches')
     .then(res => res.json())
     .then(res => this.setState(
       {schedule: res.matches,
@@ -274,7 +274,7 @@ class App extends Component {
             <p>There will then follow a seeded single-elimination bracket tournament. The winner of this tournament also receives automatic Iron promotion. The runner-up obtains the right to an immediate <strong>promotion match</strong> against the 3rd Place finisher of Iron.</p>
             <p>In Iron, everyone who did not finish 1st or 2nd is at risk! 4th-6th place are automatically demoted to make room for Challenger promotees as above. 3rd Place is subject to a <strong>hazard match</strong> vs. the runner-up of the Challenger tournament.</p>
             <h2>Match Rules</h2>
-            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="http://draftmeaspy.party/" target="_blank">here</a></strong></p>
+            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="https://draftmeaspy.party/" target="_blank">here</a></strong></p>
             <h3>Regular Season Matches</h3>
             <p>A regular season match consists of a maximum of twelve games over four maps, drafted by the players from the map pool (see below for map pool). In the draft process, the players may use any random method (like flipping a coin or LtHummus' draft utility) to determine a winner; that winner has their choice of determining who bans and drafts first, or who spies/snipes first; whichever of these options they choose, the player who lost the random toss determines the other. The players each ban one map from the map pool.</p>
             <p>Following bans, the player who banned first picks a non-banned map layout first, followed by the other. This first pick of each player will be played TWICE (twice each as spy and sniper for each player). Then each player picks a further map which will be played ONCE. </p>
@@ -359,9 +359,9 @@ class App extends Component {
         <footer className="bd-footer text-muted">
   <div className="container">
     <div className="h4 text-center">
-      SCL Manager was made by <a href="http://www.twitter.com/lthummus" target="_blank">LtHummus</a> and <a href="http://www.twitter.com/aforgottentune" target="_blank">aforgottentune</a>, with design and iconography by <a href="http://www.twitter.com/alexandremisson" target="_blank">kaplOw</a>.
-      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" target="_blank">Steam</a> and at <a href="http://www.spyparty.com" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
-      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="http://discord.gg/spyparty" target="_blank">Discord</a>!
+      SCL Manager was made by <a href="https://www.twitter.com/lthummus" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" target="_blank">kaplOw</a>.
+      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="httpss://store.steampowered.com/app/329070/SpyParty/" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
+      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="https://discord.gg/spyparty" target="_blank">Discord</a>!
     </div>
   </div>
 </footer>
