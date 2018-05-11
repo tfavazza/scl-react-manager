@@ -7,6 +7,7 @@ import RecapBlock from './recapBlock';
 import ModalWrapper from './modalWrapper';
 import FullSchedule from './fullScheduleBlock'
 import Standings from './standingsBlock';
+import PrevWeeksBlock from './prevWeeksBlock';
 import PlayerSchedule from './playerSchedule';
 import Ballroom from './levels/ballroom.png';
 import Balcony from './levels/balcony.png';
@@ -29,9 +30,10 @@ class App extends Component {
         isAllGamesVisible: false, 
         isThisWeekVisible: true,
         isRules: false,
-        howTow: false
+        isPrevWeeksVisible: false
       },
      gamesThisWeek: [],
+     prevWeekGames: [],
      recap: null,
      isOpen: false,
      selectedLeague: 'Diamond',
@@ -81,13 +83,14 @@ class App extends Component {
     console.log(filter.value);
     return row[filter.id].startsWith(filter.value)
   }
-  getGamesThisWeek = (week) => {
+  getGamesForAWeek = (gamesState, week) => {
+    console.log(gamesState);
     console.log(week);
     if (!week)
       {week = 1};
     fetch("https://scl.spypartyfans.com/api/match/week/" + week)
     .then(res => res.json())
-    .then(res=> this.setState({gamesThisWeek: res}))
+    .then(res=> this.setState({[gamesState]: res}))
   };
 
   getLeagueStatus = (league) => {
@@ -125,7 +128,7 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    this.getGamesThisWeek(this.state.currentWeek);
+    this.getGamesForAWeek('gamesThisWeek', this.state.currentWeek);
     this.fetchSelectedLeague()
     fetch("https://scl.spypartyfans.com/api/match/all")
     .then(res => res.json())
@@ -197,6 +200,9 @@ class App extends Component {
               <li className={`${this.state.isVisible.isThisWeekVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isThisWeekVisible && "active"}`} name="isThisWeekVisible" data-toggle="tab" onClick={(e) => this.getActiveTab(e.target.name)}>Games This Week</a>
               </li>
+              <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games Other Weeks</a>
+              </li>
               <li className={`${this.state.isVisible.isStandingsVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isStandingsVisible && "active"}`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
               </li>
@@ -213,6 +219,13 @@ class App extends Component {
               getGameRecap={(value) => this.getGameRecap(value)}
             />
           }
+          {this.state.isVisible.isPrevWeeksVisible && 
+            <PrevWeeksBlock
+              getGamesForAWeek={this.getGamesForAWeek}
+              prevWeekGames={this.state.prevWeekGames}
+              getGameRecap={(value) => this.getGameRecap(value)}
+            />
+          }
           {this.state.isVisible.isStandingsVisible && 
             <Standings
               standingsData={this.state.standingsData}
@@ -225,7 +238,6 @@ class App extends Component {
             <FullSchedule
               selectedLeague={this.state.selectedLeague}
               matchData={this.state.matchData}
-              filterMethod={this.filterMethod}
               getSelectedLeague={this.getSelectedLeague}
               getGameRecap={this.getGameRecap}
             />
