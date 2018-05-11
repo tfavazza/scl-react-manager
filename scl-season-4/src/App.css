@@ -140,8 +140,8 @@ hr {
 .block {
   flex-wrap: all
 }
-.selected {
-  background-color: grey;
+.selected{
+  box-shadow:0px 12px 22px 1px #333;
 }
 .react-table {
   margin: 20px;
@@ -168,4 +168,15 @@ hr {
 }
 .fix-modal {
   padding: 10px;
+}
+/* 
+to hide the buttonness of the button
+*/
+.wodar {
+  text-decoration: none;
+  color: grey;
+}
+.wodar:hover {
+  text-decoration: none;
+  color: grey;
 }

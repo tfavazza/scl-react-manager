@@ -32,7 +32,7 @@ const RecapBlock = props => {
   return (
         <div className="fix-modal">
           <div className="text-center h2 less-padding"> 
-           {recap.scoreSummary || `${recap.forfeitWinner} wins`}<img src={division[recap.league]} height="50" /> 
+           {recap.scoreSummary || `${recap.forfeitWinner} wins`} <img src={division[recap.league]} height="60" /> 
           </div> 
             <div className="h3 player-names recap-names">
               <span className={`flag-icon flag-icon-${recap.player1.country}`}></span> {recap.player1.name} 

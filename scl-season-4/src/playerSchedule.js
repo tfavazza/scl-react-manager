@@ -9,22 +9,8 @@ import IronI from './scl_rank_badges/scl_badge_iron.svg'
 import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
 import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
 
-class PlayerSchedule extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      schedule: [],
-      playerInfo: {}
-   }
- }
-  static propTypes = {
-    currentPlayer: PropTypes.string,
-    schedule: PropTypes.array,
-    playerInfo: PropTypes.shape(PropTypes.object)
-  }
-
-  render () {
-    const schedule = this.props.schedule || [];
+const PlayerSchedule = props => {
+      const schedule = props.schedule || [];
     const images = {
       Diamond: DiamondI,
       Platinum: PlatinumI,
@@ -38,7 +24,7 @@ class PlayerSchedule extends Component {
     return (
       <div>
         <div className="h3 player-names col-6 recap-names">
-         <img align="float-left" src={images[this.props.playerInfo.divisionName]} height="70"/> {this.props.playerInfo.name}
+         <img align="float-left" src={images[props.playerInfo.divisionName]} height="70"/> {props.playerInfo.name}
         </div> 
         <blockquote className="alt-color">
           {schedule.map((week) => {
@@ -53,7 +39,6 @@ class PlayerSchedule extends Component {
         </blockquote>
       </div>
     )
-  }
 }
 
 export default PlayerSchedule;

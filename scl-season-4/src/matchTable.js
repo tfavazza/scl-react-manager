@@ -5,37 +5,47 @@ import matchSorter from 'match-sorter';
 
 const MatchTable = props => {
   const matchData = props.matchData ? props.matchData : []
-  const  getButtonForURL = row => {
-    return row.row.matchUrl ? <a className="btn btn-info" href={`${row.row.matchUrl}`}>Download Game</a> : 'N/A'
+  const  getButtonForReplays = row => {
+    return row.row.matchUrl ? <a className="green cursor" onClick={() => props.getGameRecap(row.original.id)}>RESULTS</a> : 'N/A'
+  }
+  const getFlagForPlayer1 = row => {
+    return <div className="text-left"><span className={`flag-icon flag-icon-${row.original.player1.country}`}> </span> {row.original.player1.name}</div>
+  }
+    const getFlagForPlayer2 = row => {
+    return <div className="text-left"><span className={`flag-icon flag-icon-${row.original.player2.country}`}> </span> {row.original.player2.name}</div>
   }
 
 
+// TODO SWITCH REPLAY FILES TO GAME RECAP
 
-    const columns = [{
-      Header: 'League',
-      accessor: 'league'
-    }, 
-    {
-      Header: 'Replay Files',
-      accessor: 'matchUrl',
-      Cell: getButtonForURL
+    const columns = [
+        {
+      Header: 'Week',
+      accessor: 'week'
     },
     {
       Header: 'Player',
       accessor: 'player1.name',
-      filterMethod: props.filterMethod
+      Cell: getFlagForPlayer1
     },
     {
       Header: 'Player',
       accessor: 'player2.name',
-      filterMethod: props.filterMethod  
+      Cell: getFlagForPlayer2  
+    },
+        {
+      Header: 'Game Information',
+      accessor: 'matchUrl',
+      Cell: getButtonForReplays,
+      filterable: false
     }]
 return (
-  <div className="padding">
+  <div className="h4">
     <ReactTable 
-    filterable
     defaultFilterMethod={props.filterMethod}
-    className="-striped -highlight" data={matchData} columns={columns} 
+    className="-striped -highlight text-center" 
+    data={matchData} 
+    columns={columns} 
     defaultPageSize={30}
     pageSizeOptions={[30, 50, 100]}
     />

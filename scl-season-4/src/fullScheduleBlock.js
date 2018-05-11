@@ -13,10 +13,11 @@ const FullSchedule = props => {
   <Divisions
     selectedLeague={props.selectedLeague}
     getSelectedLeague={props.getSelectedLeague}
-    />
+    /><div className="h3">Click the icons above to view the full schedule for that league</div>
       <MatchTable
         matchData={matchData}
         filterMethod={props.filterMethod}
+        getGameRecap={props.getGameRecap}
       />
 </div>
   )

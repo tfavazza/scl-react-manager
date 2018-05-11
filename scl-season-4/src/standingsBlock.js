@@ -10,7 +10,7 @@ const StandingsTable = props => {
     return row.row.matchUrl ? <a className="btn btn-info" href={`${row.row.standingsData}`}>Download Game</a> : 'N/A'
   }
   const getPlayerLink = row => {
-    return row.row.name ? <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a> : ''
+    return row.row.name ? (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) : ''
   }
 
 
@@ -31,18 +31,24 @@ const StandingsTable = props => {
     {
       Header: 'Losses',
       accessor: 'losses'
+    },
+    {
+      Header: 'Draws',
+      accessor: 'draws'
     }]
 return (
-  <div className="padding">
+  <div className="">
     <Divisions
       getSelectedLeague={props.getSelectedLeague}
       selectedLeague= {props.selectedLeague}
-    />
-    <div className="react-table">
+    />  <div className="h3">Click a player's name to get their full schedule and match breakdown</div>
+    <div className="react-table h4">
     <ReactTable 
     filterable
     defaultFilterMethod={props.filterMethod}
-    className="-striped -highlight" data={standingsData} columns={columns} 
+    className="-striped -highlight text-center" 
+    data={standingsData} 
+    columns={columns} 
     defaultPageSize={10}
     pageSizeOptions={[10, 20, 30]}
     />

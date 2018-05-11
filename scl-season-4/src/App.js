@@ -4,7 +4,7 @@ import './App.css';
 import PropTypes from 'prop-types';
 import PlayerBlock from './playerBlock';
 import RecapBlock from './recapBlock';
-import Centered from './modalWrapper';
+import ModalWrapper from './modalWrapper';
 import FullSchedule from './fullScheduleBlock'
 import Standings from './standingsBlock';
 import PlayerSchedule from './playerSchedule';
@@ -159,6 +159,9 @@ class App extends Component {
   onFileSet = (e) => {
     this.setState({file: e.target.files[0]});
   }
+  onWodar = () => {
+    console.log('wooodar');
+  }
 
   getPlayerSchedule = (player) => {
     fetch('http://scl.spypartyfans.com/api/player/' + player + '/matches')
@@ -191,30 +194,19 @@ class App extends Component {
               {this.state.confirmation && <div id="confirmation">{this.state.confirmation}</div>}
             </center>
             <ul className="white-modal nav nav-tabs center-block text-center">
-              <li className={`${this.state.isVisible.isThisWeekVisible && "active"}`}>
-                <a className={`${this.state.isVisible.isThisWeekVisible && "active"} h1 btn`} name="isThisWeekVisible" data-toggle="tab" onClick={(e) => this.getActiveTab(e.target.name)}>Games This Week</a>
+              <li className={`${this.state.isVisible.isThisWeekVisible && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isThisWeekVisible && "active"}`} name="isThisWeekVisible" data-toggle="tab" onClick={(e) => this.getActiveTab(e.target.name)}>Games This Week</a>
               </li>
-              <li className={`${this.state.isVisible.isStandingsVisible && "active"}`}>
-                <a className={`${this.state.isVisible.isStandingsVisible && "active"} h1 btn`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
+              <li className={`${this.state.isVisible.isStandingsVisible && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isStandingsVisible && "active"}`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
               </li>
-              <li className={`${this.state.isVisible.isAllGamesVisible && "active"}`}>
-                <a className={`${this.state.isVisible.isAllGamesVisible && "active"} h1 btn`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
+              <li className={`${this.state.isVisible.isAllGamesVisible && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
               </li>
-              <li className={`${this.state.isVisible.isRules && "active"}`}>
-                <a className={`${this.state.isVisible.isRules && "active"} h1 btn`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
-              </li>
-              <li className={`${this.state.isVisible.howTo && "active"}`}>
-                <a className={`${this.state.isVisible.howTo && "active"} h1 btn`} data-toggle="tab" name="howTo">How-To Guide</a>
+              <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
               </li>
             </ul>
-          {this.state.isVisible.isAllGamesVisible &&
-            <FullSchedule
-              selectedLeague={this.state.selectedLeague}
-              matchData={this.state.matchData}
-              filterMethod={this.filterMethod}
-              getSelectedLeague={this.getSelectedLeague}
-            />
-          }
           {this.state.isVisible.isThisWeekVisible && 
             <PlayerBlock 
               gamesThisWeek={this.state.gamesThisWeek}
@@ -229,8 +221,17 @@ class App extends Component {
               selectedLeague={this.state.selectedLeague}
             />
           }
+          {this.state.isVisible.isAllGamesVisible &&
+            <FullSchedule
+              selectedLeague={this.state.selectedLeague}
+              matchData={this.state.matchData}
+              filterMethod={this.filterMethod}
+              getSelectedLeague={this.getSelectedLeague}
+              getGameRecap={this.getGameRecap}
+            />
+          }
           {this.state.schedule && 
-            <Centered
+            <ModalWrapper
               onCloseModal={(e) => this.onCloseModal('scheduleOpen')}
               open={this.state.scheduleOpen}
             >
@@ -240,10 +241,10 @@ class App extends Component {
                 schedule={this.state.schedule}
                 getPlayerSchedule={this.getPlayerSchedule}
               />
-            </Centered>
+            </ModalWrapper>
           }
           {this.state.recap && 
-            <Centered
+            <ModalWrapper
               onCloseModal={(e) => this.onCloseModal('recapOpen')}
               open={this.state.recapOpen}
             >
@@ -254,10 +255,10 @@ class App extends Component {
                 <div className="footer">
                 </div>
               </div>
-            </Centered>
+            </ModalWrapper>
           }
           {this.state.isVisible.isRules && <div>
-            <h1>League Rules</h1>
+            <h1>SpyParty Competitive League Rules</h1>
             <h2>Schedule</h2>
             <p>A <strong>regular season</strong> is 10 weeks. There will follow for the normal divisions a two-week break to play makeup matches and set playoff matches. The next week will have all <strong>divisional championship</strong> and <strong>hazard matches</strong>, and the week after that will have all promotion and relegation matches, plus the <strong>league championship</strong>. Then there is an offseason of variable length, after which the next regular season resumes. Offseason breaks may be increased in length to accommodate other events.</p>
             <p>For Challenger division, the regular season is a 10-week Swiss event, followed by a seeded bracket single-elimination tournament, using results from the Swiss as seeding.</p>
@@ -355,6 +356,15 @@ class App extends Component {
 
           </div>}
         </div>
+        <footer className="bd-footer text-muted">
+  <div className="container">
+    <div className="h4 text-center">
+      SCL Manager was made by <a href="http://www.twitter.com/lthummus" target="_blank">LtHummus</a> and <a href="http://www.twitter.com/aforgottentune" target="_blank">aforgottentune</a>, with design and iconography by <a href="http://www.twitter.com/alexandremisson" target="_blank">kaplOw</a>.
+      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" target="_blank">Steam</a> and at <a href="http://www.spyparty.com" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
+      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="http://discord.gg/spyparty" target="_blank">Discord</a>!
+    </div>
+  </div>
+</footer>
     </div>
     );
   }
