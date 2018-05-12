@@ -47,7 +47,7 @@
     display:block;
     padding:2px 0;
     line-height:1px;
-    border-top:8px solid #CCC; 
+    border-top:8px solid grey; 
 }
 [data-success="2"]:before {
     content:"\a0";
