@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logos/SCL_hor_mono_dark.png';
+import logo from './logos/sclmanager_logo.svg';
 import './App.css';
 import PropTypes from 'prop-types';
 import PlayerBlock from './playerBlock';
@@ -46,7 +46,8 @@ class App extends Component {
      schedule: [],
      playerInfo: {},
      recapOpen: false,
-     scheduleOpen: false
+     scheduleOpen: false,
+     fileName: ''
    }
  }
  static defaultProps = {
@@ -64,7 +65,7 @@ class App extends Component {
 
 // hard coding the start of SCL woo!
   getCurrentWeek = () => {
-    const startDate =  new Date('2018-05-05');
+    const startDate =  new Date('Sat May 05 2018 00:00:01 GMT-0400 (Eastern Daylight Time)');
     let utcDay = new Date();
     let today = utcDay - new Date().getTimezoneOffset();
     let leagueWeek = (today - startDate) / 86400000;
@@ -129,6 +130,7 @@ class App extends Component {
 
   componentDidMount = () => {
     this.getGamesForAWeek('gamesThisWeek', this.state.currentWeek);
+    this.getGamesForAWeek('prevWeekGames', this.state.currentWeek);
     this.fetchSelectedLeague()
     fetch("https://scl.spypartyfans.com/api/match/all")
     .then(res => res.json())
@@ -160,7 +162,9 @@ class App extends Component {
     )
   }
   onFileSet = (e) => {
-    this.setState({file: e.target.files[0]});
+    if (e.target.files[0]) {
+      this.setState({file: e.target.files[0], fileName: e.target.files[0].name});
+    }
   }
   onWodar = () => {
     console.log('wooodar');
@@ -182,16 +186,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="img-fluid" className="App-logo" alt="logo" />
+          <img src={logo} className="img-fluid" className="App-logo" height="375" alt="logo" />
         </header>
           <div className="container">
-            <center><div className="h1"><b>SCL Manager</b></div>
+            <center>
               <div id="upload-file">
-                <h3>Upload your replay zip files here!</h3>
+                <h3>Upload your .zip replay files</h3>
                 <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
-                  <input type="file" name="file" />
-                  <output id="list"></output>
-                  <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload .zip file!" />
+                  <input type="file" name="file" id="file" class="ugly-input" />
+                  <label className="btn" for="file">CLICK HERE TO ADD YOUR REPLAYS</label>
+                  <output name="list" id="list"></output><label for="list">{this.state.fileName || ''}</label><input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
                 </form>
               </div>
               {this.state.confirmation && <div id="confirmation">{this.state.confirmation}</div>}

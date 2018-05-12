@@ -3,13 +3,13 @@
 }
 
 .App-logo {
-  position: left;
-  background-size: 400px;
+  display: inline-block;
+  background-size: 300px;
 
 }
 .App-header {
   text-align: center;
-  background-color: #fefefe;
+  background-color: #380a15;
   height: 400px;
   padding: 10px;
   color: white;
@@ -179,4 +179,16 @@ to hide the buttonness of the button
 .wodar:hover {
   text-decoration: none;
   color: grey;
+}
+.move-down {
+  margin-bottom: -15px;
+  margin-right: -20px;
+}
+.ugly-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }

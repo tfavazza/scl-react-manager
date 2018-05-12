@@ -47,14 +47,14 @@ const PlayerBlock = props => {
                   </div>
                 <div>
                 <hr/>
-                <div className="level-name player-names">
+                <div className="level-name player-names move-down">
                   {prop.status ? 
                   (<span className="float-right level-name">
-                    <a className="game-details float-right cursor" value={prop.id} onClick={(e) => getGameRecap(prop.id)}>
+                    <a className="green game-details float-right cursor" value={prop.id} onClick={(e) => getGameRecap(prop.id)}>
                       RESULTS 
                     </a> {" "}
                   {!prop.forfeitWinner ?
-                  (<a className="green player-names" href={prop.matchUrl}>REPLAYS</a>) 
+                  (<a className="player-names" href={prop.matchUrl}>REPLAYS</a>) 
                   :
                    <span>FORFEITTED</span>
                   }

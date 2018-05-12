@@ -8,7 +8,7 @@ const prevWeeksBlock = props => {
 	const arrayOfNumbers = Array.from(new Array(10),(val,index)=>index+1);;
  return (<div>
  	{arrayOfNumbers.map(number => {
- 		return <a name={number} className="h2 cursor padding" onClick={e => props.getGamesForAWeek('prevWeekGames', e.target.name)}>{number}</a>
+ 		return <a name={number} className="h1 cursor padding" onClick={e => props.getGamesForAWeek('prevWeekGames', e.target.name)}>{number}</a>
  	})}
   {props.prevWeekGames && <PlayerBlock 
     gamesThisWeek={props.prevWeekGames}
