@@ -28,9 +28,9 @@ class App extends Component {
      isVisible: {
         isStandingsVisible: false,
         isAllGamesVisible: false, 
-        isThisWeekVisible: true,
+        isThisWeekVisible: false,
         isRules: false,
-        isPrevWeeksVisible: false
+        isPrevWeeksVisible: true
       },
      gamesThisWeek: [],
      prevWeekGames: [],
@@ -129,13 +129,13 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    this.getGamesForAWeek('gamesThisWeek', this.state.currentWeek);
+    // this.getGamesForAWeek('gamesThisWeek', this.state.currentWeek);
     this.getGamesForAWeek('prevWeekGames', this.state.currentWeek);
     this.fetchSelectedLeague()
     fetch("https://scl.spypartyfans.com/api/match/all")
     .then(res => res.json())
     .then(res => this.setState( { matchData: res}))
-    .then(this.setState({isThisWeekVisible: true}))
+    .then(this.setState({isPrevWeeksVisible: true}))
   };
 
   getActiveTab = (tabName) => {
@@ -201,11 +201,8 @@ class App extends Component {
               {this.state.confirmation && <div id="confirmation">{this.state.confirmation}</div>}
             </center>
             <ul className="white-modal nav nav-tabs center-block text-center">
-              <li className={`${this.state.isVisible.isThisWeekVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isThisWeekVisible && "active"}`} name="isThisWeekVisible" data-toggle="tab" onClick={(e) => this.getActiveTab(e.target.name)}>Games This Week</a>
-              </li>
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games Other Weeks</a>
+                <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games By Week</a>
               </li>
               <li className={`${this.state.isVisible.isStandingsVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isStandingsVisible && "active"}`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
@@ -217,12 +214,6 @@ class App extends Component {
                 <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
               </li>
             </ul>
-          {this.state.isVisible.isThisWeekVisible && 
-            <PlayerBlock 
-              gamesThisWeek={this.state.gamesThisWeek}
-              getGameRecap={(value) => this.getGameRecap(value)}
-            />
-          }
           {this.state.isVisible.isPrevWeeksVisible && 
             <PrevWeeksBlock
               getGamesForAWeek={this.getGamesForAWeek}
