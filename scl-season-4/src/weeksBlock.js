@@ -4,14 +4,15 @@ import PlayerBlock from './playerBlock';
 
 
 const WeekBlock = props => {
-	const selectedWeekGames = props.selectedWeekGames || [];
 	const arrayOfNumbers = Array.from(new Array(10),(val,index)=>index+1);;
  return (<div>
  	<div className="numbers-row">
  	{arrayOfNumbers.map(number => {
  		return (
  			<button 
+ 				key={number}
  				name={number} 
+ 				// eslint-disable-next-line
  				className={`${props.selectedWeek == number && "selected"} h1 btn btn-success cursor big-font text-center col`} 
  				onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}
  			>{number}

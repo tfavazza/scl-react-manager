@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
-import matchSorter from 'match-sorter';
 
 const MatchTable = props => {
   const matchData = props.matchData ? props.matchData : []

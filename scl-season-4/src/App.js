@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from './logos/sclmanager_logo.svg';
 import './App.css';
 import PropTypes from 'prop-types';
-import PlayerBlock from './playerBlock';
 import RecapBlock from './recapBlock';
 import ModalWrapper from './modalWrapper';
 import FullSchedule from './fullScheduleBlock'
@@ -24,8 +23,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     matchData: [],
-     isVisible: {
+      wodar: null,
+      matchData: [],
+       isVisible: {
         isStandingsVisible: false,
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
@@ -71,7 +71,7 @@ class App extends Component {
     let utcDay = new Date();
     let today = utcDay - new Date().getTimezoneOffset();
     let leagueWeek = (today - startDate) / 86400000;
-    leagueWeek = parseInt(Math.ceil(leagueWeek / 7));
+    leagueWeek = parseInt(Math.ceil(leagueWeek / 7), 10);
     this.setState({currentWeek: leagueWeek});
     return leagueWeek;
   }  
@@ -142,7 +142,7 @@ class App extends Component {
     const newVisible = {}
     const lastVisible = {...this.state.isVisible};
     Object.keys(lastVisible).forEach(function(key) {
-        newVisible[key] = (key == tabName)
+        newVisible[key] = (key === tabName)
     });
     this.setState({isVisible: newVisible})
   };
@@ -167,7 +167,7 @@ class App extends Component {
     }
   }
   onWodar = () => {
-    console.log('wooodar');
+    alert('You have successfully clicked the Wodar button 🎉')
   }
 
   formatForumPost = () => {
@@ -193,7 +193,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="img-fluid" className="App-logo" height="375" alt="logo" />
+          <img src={logo} className="App-logo img-fluid" height="375" alt="the logo" />
         </header>
           <div className="container">
             <center>
@@ -290,7 +290,7 @@ class App extends Component {
             <p>There will then follow a seeded single-elimination bracket tournament. The winner of this tournament also receives automatic Iron promotion. The runner-up obtains the right to an immediate <strong>promotion match</strong> against the 3rd Place finisher of Iron.</p>
             <p>In Iron, everyone who did not finish 1st or 2nd is at risk! 4th-6th place are automatically demoted to make room for Challenger promotees as above. 3rd Place is subject to a <strong>hazard match</strong> vs. the runner-up of the Challenger tournament.</p>
             <h2>Match Rules</h2>
-            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="https://draftmeaspy.party/" target="_blank">here</a></strong></p>
+            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="https://draftmeaspy.party/" rel="noopener noreferrer" target="_blank">here</a></strong></p>
             <h3>Regular Season Matches</h3>
             <p>A regular season match consists of a maximum of twelve games over four maps, drafted by the players from the map pool (see below for map pool). In the draft process, the players may use any random method (like flipping a coin or LtHummus' draft utility) to determine a winner; that winner has their choice of determining who bans and drafts first, or who spies/snipes first; whichever of these options they choose, the player who lost the random toss determines the other. The players each ban one map from the map pool.</p>
             <p>Following bans, the player who banned first picks a non-banned map layout first, followed by the other. This first pick of each player will be played TWICE (twice each as spy and sniper for each player). Then each player picks a further map which will be played ONCE. </p>
@@ -312,34 +312,34 @@ class App extends Component {
             <p>The map pool is as follows. It is subject to change. All maps use the "any" gametype of the specified numbers. All maps refer to new art variants. Default partygoers and time control unless otherwise specified.</p>
             <div className="maps">
             <span className="map-images">
-            <figure className="map-figures"><img src={Ballroom} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Ballroom} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Ballroom 4/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Library} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Library} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Library 5/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Moderne} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Moderne} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Moderne 5/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Balcony} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Balcony} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Balcony 2/3</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Terrace} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Terrace} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Terrace 3/5 </figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Pub} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Pub} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Pub 4/6 - 16 guests</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={HighRise} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={HighRise} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>High-Rise 3/5</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Courtyard} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Courtyard} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Courtyard 4/7</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Gallery} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Gallery} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Gallery 4/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Veranda} className="smaller-image" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Veranda} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Ballroom 5/8</figcaption></figure></span>
             </div>
             <h2>Scheduling and Miscellaneous</h2>
@@ -375,9 +375,9 @@ class App extends Component {
         <footer className="bd-footer text-muted">
   <div className="container">
     <div className="h4 text-center">
-      SCL Manager was made by <a href="https://www.twitter.com/lthummus" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" target="_blank">kaplOw</a>.
-      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="httpss://store.steampowered.com/app/329070/SpyParty/" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
-      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="https://discord.gg/spyparty" target="_blank">Discord</a>!
+      SCL Manager was made by <a href="https://www.twitter.com/lthummus" rel="noopener noreferrer" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" rel="noopener noreferrer" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" rel="noopener noreferrer" target="_blank">kaplOw</a>.
+      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="httpss://store.steampowered.com/app/329070/SpyParty/" rel="noopener noreferrer" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" rel="noopener noreferrer" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
+      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
     </div>
   </div>
 </footer>

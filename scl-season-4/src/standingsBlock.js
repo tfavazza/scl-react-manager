@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
-import matchSorter from 'match-sorter';
 import Divisions from './divisions'
 
 const StandingsTable = props => {
   const standingsData = props.standingsData ? props.standingsData.players : []
-  const  getButtonForURL = row => {
-    return row.row.matchUrl ? <a className="btn btn-info" href={`${row.row.standingsData}`}>Download Game</a> : 'N/A'
-  }
   const getPlayerLink = row => {
     return row.row.name ? (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) : ''
   }

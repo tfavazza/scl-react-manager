@@ -6,7 +6,7 @@ import MatchTable from './matchTable';
 const FullSchedule = props => {
   const matchData = props.matchData.filter(
     (match) => 
-    {return match.league == props.selectedLeague
+    {return match.league === props.selectedLeague
     })
  return (
   <div>

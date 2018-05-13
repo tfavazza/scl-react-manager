@@ -35,7 +35,7 @@ const PlayerBlock = props => {
               <div className="panel-heading" role="tab" id="heading">
                 <div className="media">
                   <div className="ml-3 col-4 float-right" >
-                   <img align="right" src={images[leagueName]} height="70"/>
+                   <img alt={leagueName} align="right" src={images[leagueName]} height="70"/>
                    </div>
                    <div className="player-names col-6 float-left">
                       <span className={`flag-icon flag-icon-${prop.player1.country}`}></span> {prop.player1.name}
