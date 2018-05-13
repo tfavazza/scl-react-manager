@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import DiamondI from './scl_rank_badges/scl_badge_diamond.svg'
 import PlatinumI from './scl_rank_badges/scl_badge_platinum.svg'
 import SilverI from './scl_rank_badges/scl_badge_silver.svg'
@@ -24,7 +23,7 @@ const PlayerSchedule = props => {
     return (
       <div>
         <div className="h3 player-names col-6 recap-names">
-         <img align="float-left" src={images[props.playerInfo.divisionName]} height="70"/> {props.playerInfo.name}
+         <img align="float-left" alt={props.playerInfo.divisionName} src={images[props.playerInfo.divisionName]} height="70"/> {props.playerInfo.name}
         </div> 
         <blockquote className="alt-color">
           {schedule.map((week) => {

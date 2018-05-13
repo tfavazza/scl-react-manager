@@ -32,7 +32,7 @@ const RecapBlock = props => {
   return (
         <div className="fix-modal">
           <div className="text-center h2 less-padding"> 
-           {recap.scoreSummary || `${recap.forfeitWinner} wins`} <img src={division[recap.league]} height="60" /> 
+           {recap.scoreSummary || `${recap.forfeitWinner} wins`} <img alt={recap.league} src={division[recap.league]} height="60" /> 
           </div> 
             <div className="h3 player-names recap-names">
               <span className={`flag-icon flag-icon-${recap.player1.country}`}></span> {recap.player1.name} 
@@ -48,8 +48,8 @@ const RecapBlock = props => {
            (<div key={game.id} className={`h3 background-image ${game.level}`}>
                 <div className="float-right white col-4 offset-8 level-name"> {game.level} </div>  
                 <div>
-                  <div className="float-left white padding col-6"><img className="white-image" src={role[game.winnerRole]} height="30" /> {game.winnerName}</div>
-                  {counter && <div className="float-left col-6 padding white"><img className="white-image" src={role[recap.games[counter].winnerRole]} height="30" /> {recap.games[counter].winnerName}</div>}  
+                  <div className="float-left white padding col-6"><img className="white-image" alt={game.winnerRole} src={role[game.winnerRole]} height="30" /> {game.winnerName}</div>
+                  {counter && <div className="float-left col-6 padding white"><img className="white-image" alt={recap.games[counter].winnerRole} src={role[recap.games[counter].winnerRole]} height="30" /> {recap.games[counter].winnerName}</div>}  
                 </div> 
                 </div>)})}
           <hr/>

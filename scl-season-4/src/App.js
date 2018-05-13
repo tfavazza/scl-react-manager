@@ -49,7 +49,7 @@ class App extends Component {
      recapOpen: false,
      scheduleOpen: false,
      fileName: '',
-    url: "https://scl.spypartyfans.com/api/" 
+     url: "https://scl.spypartyfans.com/api/" 
    }
  }
  static defaultProps = {
@@ -173,6 +173,9 @@ class App extends Component {
   formatForumPost = () => {
     return {__html: this.state.confirmation}
   }
+  onCloseForumPost = () => {
+    this.setState({confirmation: ''});
+  }
 
   getPlayerSchedule = (player) => {
     fetch(this.state.url + 'player/' + player + '/matches')
@@ -203,7 +206,7 @@ class App extends Component {
                   <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
                 </form>
               </div>
-              {this.state.confirmation && <div id="confirmation" dangerouslySetInnerHTML={this.formatForumPost()} />}
+              {this.state.confirmation && <div  id="confirmation"><a className="btn close-button" onClick={this.onCloseForumPost}>X</a><div dangerouslySetInnerHTML={this.formatForumPost()} /></div>}
             </center>
             <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>

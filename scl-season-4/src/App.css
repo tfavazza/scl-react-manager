@@ -5,12 +5,13 @@
 
 .App-logo {
   display: inline-block;
-  background-size: 300px;
+  background-size: 200px;
+  height: 200px;
 }
 .App-header {
   text-align: center;
   background-color: #380a15;
-  height: 400px;
+  height: 250px;
   padding: 10px;
   color: white;
 }
@@ -176,6 +177,13 @@ hr {
 .fix-modal {
   padding: 10px;
 }
+.close-button {
+  text-align-last: right;
+  align-self: right;
+  align-content: right;
+  text-align: right;
+  text-align-last: right;
+}
 /* 
 to hide the buttonness of the button
 */
@@ -200,10 +208,10 @@ to hide the buttonness of the button
   z-index: -1;
 }
 .big-font {
-  font-size: 8vh;
+  font-size: 5vh;
   display: inline-flex;
   position: relative;
-  margin: 1.5%;
+  margin: .5% 1.5%;
 }
 .big-font:hover {
   text-decoration: none;

@@ -15,9 +15,6 @@ const MatchTable = props => {
     return <div className="text-left"><span className={`flag-icon flag-icon-${row.original.player2.country}`}> </span> {row.original.player2.name}</div>
   }
 
-
-// TODO SWITCH REPLAY FILES TO GAME RECAP
-
     const columns = [
         {
       Header: 'Week',
