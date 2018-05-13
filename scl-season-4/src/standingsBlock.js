@@ -42,7 +42,7 @@ return (
       getSelectedLeague={props.getSelectedLeague}
       selectedLeague= {props.selectedLeague}
     />  <div className="h3">Click a player's name to get their full schedule and match breakdown</div>
-    <div className="react-table h4">
+    <div className="react-table table-size h4">
     <ReactTable 
     filterable
     defaultFilterMethod={props.filterMethod}

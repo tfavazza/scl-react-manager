@@ -40,14 +40,14 @@ const MatchTable = props => {
       filterable: false
     }]
 return (
-  <div className="h4">
+  <div className="h4 table-size">
     <ReactTable 
     defaultFilterMethod={props.filterMethod}
     className="-striped -highlight text-center" 
     data={matchData} 
     columns={columns} 
-    defaultPageSize={30}
-    pageSizeOptions={[30, 50, 100]}
+    defaultPageSize={10}
+    pageSizeOptions={[10, 20, 50, 100]}
     />
   </div>
   )

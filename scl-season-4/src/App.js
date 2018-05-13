@@ -7,7 +7,7 @@ import RecapBlock from './recapBlock';
 import ModalWrapper from './modalWrapper';
 import FullSchedule from './fullScheduleBlock'
 import Standings from './standingsBlock';
-import PrevWeeksBlock from './prevWeeksBlock';
+import WeeksBlock from './weeksBlock';
 import PlayerSchedule from './playerSchedule';
 import Ballroom from './levels/ballroom.png';
 import Balcony from './levels/balcony.png';
@@ -33,11 +33,12 @@ class App extends Component {
         isPrevWeeksVisible: true
       },
      gamesThisWeek: [],
-     prevWeekGames: [],
+     selectedWeekGames: [],
      recap: null,
      isOpen: false,
      selectedLeague: 'Diamond',
-     currentWeek: 1,
+     currentWeek: null,
+     selectedWeek: 1,
      standingsData: [],
      file: null,
      confirmation: '',
@@ -71,6 +72,7 @@ class App extends Component {
     let leagueWeek = (today - startDate) / 86400000;
     leagueWeek = parseInt(Math.ceil(leagueWeek / 7));
     this.setState({currentWeek: leagueWeek});
+    return leagueWeek;
   }  
 
 
@@ -85,13 +87,11 @@ class App extends Component {
     return row[filter.id].startsWith(filter.value)
   }
   getGamesForAWeek = (gamesState, week) => {
-    console.log(gamesState);
-    console.log(week);
     if (!week)
       {week = 1};
     fetch("https://scl.spypartyfans.com/api/match/week/" + week)
     .then(res => res.json())
-    .then(res=> this.setState({[gamesState]: res}))
+    .then(res=> this.setState({[gamesState]: res, selectedWeek: week}))
   };
 
   getLeagueStatus = (league) => {
@@ -129,8 +129,7 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    // this.getGamesForAWeek('gamesThisWeek', this.state.currentWeek);
-    this.getGamesForAWeek('prevWeekGames', this.state.currentWeek);
+    this.getGamesForAWeek('selectedWeekGames', this.getCurrentWeek());
     this.fetchSelectedLeague()
     fetch("https://scl.spypartyfans.com/api/match/all")
     .then(res => res.json())
@@ -193,14 +192,15 @@ class App extends Component {
               <div id="upload-file">
                 <h3>Upload your .zip replay files</h3>
                 <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
-                  <input type="file" name="file" id="file" class="ugly-input" />
-                  <label className="btn" for="file">CLICK HERE TO ADD YOUR REPLAYS</label>
-                  <output name="list" id="list"></output><label for="list">{this.state.fileName || ''}</label><input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
+                  <input type="file" name="file" id="file" className="ugly-input" />
+                  <label className="btn" htmlFor="file">CLICK HERE TO ADD YOUR REPLAYS</label>
+                  <output name="list" id="list"></output><label htmlFor="list">{this.state.fileName || ''}</label><br/>
+                  <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
                 </form>
               </div>
               {this.state.confirmation && <div id="confirmation">{this.state.confirmation}</div>}
             </center>
-            <ul className="white-modal nav nav-tabs center-block text-center">
+            <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games By Week</a>
               </li>
@@ -215,9 +215,10 @@ class App extends Component {
               </li>
             </ul>
           {this.state.isVisible.isPrevWeeksVisible && 
-            <PrevWeeksBlock
+            <WeeksBlock
+              selectedWeek={this.state.selectedWeek}
               getGamesForAWeek={this.getGamesForAWeek}
-              prevWeekGames={this.state.prevWeekGames}
+              selectedWeekGames={this.state.selectedWeekGames}
               getGameRecap={(value) => this.getGameRecap(value)}
             />
           }

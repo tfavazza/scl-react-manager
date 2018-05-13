@@ -14,50 +14,50 @@ class Divisions extends Component {
  return (<div className="text-center leagues">
   <a onClick={this.props.getSelectedLeague} className="cursor">
     <figure className={`${this.props.selectedLeague == 'Diamond' ? "selected": ''} division-figures`}>
-      <img name="Diamond"  src={Diamond} height="150"></img>
+      <img name="Diamond"  src={Diamond} className="division-image"></img>
       <figcaption>Diamond</figcaption>
     </figure>
   </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
   <figure className={`${this.props.selectedLeague == 'Platinum' ? "selected": ''} division-figures`}>
-    <img name="Platinum" src={Platinum}  height="150"></img>
+    <img name="Platinum" src={Platinum}  className="division-image"></img>
     <figcaption>Platinum</figcaption>
     </figure>
   </a>
 
   <a onClick={this.props.getSelectedLeague} className="cursor">
   <figure className={`${this.props.selectedLeague == 'Gold' ? "selected": ''} division-figures`}>
-  <img name="Gold" src={Gold}  height="150"></img>
+  <img name="Gold" src={Gold}  className="division-image"></img>
         <figcaption>Gold</figcaption>
     </figure>
     </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
     <figure  className={`${this.props.selectedLeague == 'Silver' ? "selected": ''} division-figures`}>
-      <img name="Silver" src={Silver} height="150"></img>
+      <img name="Silver" src={Silver} className="division-image"></img>
         <figcaption>Silver</figcaption>
     </figure>
       </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
     <figure className={`${this.props.selectedLeague == 'Bronze' ? "selected": ''} division-figures`}>
-    <img name="Bronze" src={Bronze} height="150"></img>
+    <img name="Bronze" src={Bronze} className="division-image"></img>
       <figcaption>Bronze</figcaption>
     </figure>
     </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
     <figure className={`${this.props.selectedLeague == 'Copper' ? "selected": ''} division-figures`}>
-      <img name="Copper" src={Copper} height="150"></img>
+      <img name="Copper" src={Copper} className="division-image"></img>
       <figcaption>Copper</figcaption>
     </figure>
     </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
     <figure className={`${this.props.selectedLeague == 'Iron' ? "selected": ''} division-figures`}>
-      <img name="Iron"  src={Iron} height="150"></img>
+      <img name="Iron"  src={Iron} className="division-image"></img>
       <figcaption>Iron</figcaption>
     </figure>
   </a>
   <a onClick={this.props.getSelectedLeague} className="cursor">
       <figure className={`${this.props.selectedLeague == 'Challenger' ? "selected": ''} division-figures`}>
-    <img name="Challenger" src={Challenger} height="150"></img>
+    <img name="Challenger" src={Challenger} className="division-image"></img>
         <figcaption>Challenger</figcaption>
     </figure>
     </a>
