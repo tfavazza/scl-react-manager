@@ -150,6 +150,12 @@ hr {
 .map {
   display: block;
 }
+#confirmation {
+  font-size: 2vh;
+  border: solid 1px grey;
+  text-align: left;
+  padding: 1%;
+}
 .map-figures {
   display: inline-block;
   max-width: 25%;
@@ -195,8 +201,9 @@ to hide the buttonness of the button
 }
 .big-font {
   font-size: 8vh;
-  display: inline-block;
-  margin: 3%;
+  display: inline-flex;
+  position: relative;
+  margin: 1.5%;
 }
 .big-font:hover {
   text-decoration: none;
@@ -218,7 +225,7 @@ to hide the buttonness of the button
   }
   .big-font {
     font-size: 5vh;
-    margin: 7px;
+    margin: 3px;
   }
   .selected {
     box-shadow: 1px 1vh 2vh 0 #333;

@@ -10,12 +10,12 @@ const WeekBlock = props => {
  	<div className="numbers-row">
  	{arrayOfNumbers.map(number => {
  		return (
- 			<a 
+ 			<button 
  				name={number} 
- 				className={`${props.selectedWeek == number && "selected"} h1 cursor big-font text-center col`} 
+ 				className={`${props.selectedWeek == number && "selected"} h1 btn btn-success cursor big-font text-center col`} 
  				onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}
  			>{number}
- 			</a>)
+ 			</button>)
  	})}
  	</div>
   {props.selectedWeekGames && <div className="container"><PlayerBlock 

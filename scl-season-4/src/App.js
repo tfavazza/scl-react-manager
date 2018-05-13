@@ -48,7 +48,8 @@ class App extends Component {
      playerInfo: {},
      recapOpen: false,
      scheduleOpen: false,
-     fileName: ''
+     fileName: '',
+    url: "https://scl.spypartyfans.com/api/" 
    }
  }
  static defaultProps = {
@@ -89,17 +90,17 @@ class App extends Component {
   getGamesForAWeek = (gamesState, week) => {
     if (!week)
       {week = 1};
-    fetch("https://scl.spypartyfans.com/api/match/week/" + week)
+    fetch(this.state.url + "match/week/" + week)
     .then(res => res.json())
     .then(res=> this.setState({[gamesState]: res, selectedWeek: week}))
   };
 
   getLeagueStatus = (league) => {
-    fetch("https://scl.spypartyfans.com/api/match")
+    fetch(this.state.url + "match")
   }
 
   getGameRecap = (id) => {
-    fetch("https://scl.spypartyfans.com/api/match/" + id)
+    fetch(this.state.url + "match/" + id)
     .then(res=> res.json())
   .then(res => this.setState({recap: res, recapOpen: true}))
   .then(this.toggleModal)
@@ -114,7 +115,7 @@ class App extends Component {
     if (!league) {
       league = 'Diamond';
     }
-    fetch("https://scl.spypartyfans.com/api/league/" + league)
+    fetch(this.state.url + "league/" + league)
     .then(res => res.json())
     .then(res => this.setState({standingsData: res}))
   }
@@ -131,7 +132,7 @@ class App extends Component {
   componentDidMount = () => {
     this.getGamesForAWeek('selectedWeekGames', this.getCurrentWeek());
     this.fetchSelectedLeague()
-    fetch("https://scl.spypartyfans.com/api/match/all")
+    fetch(this.state.url + "match/all")
     .then(res => res.json())
     .then(res => this.setState( { matchData: res}))
     .then(this.setState({isPrevWeeksVisible: true}))
@@ -149,7 +150,7 @@ class App extends Component {
     e.preventDefault();
     const data = new FormData();
     data.append('file', this.state.file);
-    fetch('https://scl.spypartyfans.com/api/match/parse', {
+    fetch(this.state.url + 'match/parse', {
       method: 'POST',
       body: data
     })
@@ -169,8 +170,12 @@ class App extends Component {
     console.log('wooodar');
   }
 
+  formatForumPost = () => {
+    return {__html: this.state.confirmation}
+  }
+
   getPlayerSchedule = (player) => {
-    fetch('https://scl.spypartyfans.com/api/player/' + player + '/matches')
+    fetch(this.state.url + 'player/' + player + '/matches')
     .then(res => res.json())
     .then(res => this.setState(
       {schedule: res.matches,
@@ -198,7 +203,7 @@ class App extends Component {
                   <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
                 </form>
               </div>
-              {this.state.confirmation && <div id="confirmation">{this.state.confirmation}</div>}
+              {this.state.confirmation && <div id="confirmation" dangerouslySetInnerHTML={this.formatForumPost()} />}
             </center>
             <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
