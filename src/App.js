@@ -319,32 +319,32 @@ class App extends Component {
             <figure className="map-figures"><img src={Ballroom} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>Ballroom 4/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Library} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Library} className="smaller-image" alt="map" alt-text="Library 5/8"/>
             <figcaption>Library 5/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Moderne} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Moderne} className="smaller-image" alt="map" alt-text="Moderne 5/8"/>
             <figcaption>Moderne 5/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Balcony} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Balcony} className="smaller-image" alt="map" alt-text="Balcony 2/3"/>
             <figcaption>Balcony 2/3</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Terrace} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Terrace} className="smaller-image" alt="map" alt-text="Terrace 3/5"/>
             <figcaption>Terrace 3/5 </figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Pub} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Pub} className="smaller-image" alt="map" alt-text="Pub 4/7"/>
             <figcaption>Pub 4/7 - 16 guests</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={HighRise} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={HighRise} className="smaller-image" alt="map" alt-text="High-Rise 3/5"/>
             <figcaption>High-Rise 3/5</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Courtyard} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Courtyard} className="smaller-image" alt="map" alt-text="Courtyard 4/7"/>
             <figcaption>Courtyard 4/7</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Gallery} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
+            <figure className="map-figures"><img src={Gallery} className="smaller-image" alt="map" alt-text="Gallery 4/8"/>
             <figcaption>Gallery 4/8</figcaption></figure></span>
             <span className="map-images">
-            <figure className="map-figures"><img src={Veranda} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
-            <figcaption>Ballroom 5/8</figcaption></figure></span>
+            <figure className="map-figures"><img src={Veranda} className="smaller-image" alt="map" alt-text="Veranda 5/8"/>
+            <figcaption>Veranda 5/8</figcaption></figure></span>
             </div>
             <h2>Scheduling and Miscellaneous</h2>
             <h3>Scheduling Matches</h3>
