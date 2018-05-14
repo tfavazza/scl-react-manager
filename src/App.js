@@ -206,7 +206,11 @@ class App extends Component {
                   <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
                 </form>
               </div>
-              {this.state.confirmation && <div  id="confirmation"><a className="btn close-button" onClick={this.onCloseForumPost}>X</a><div dangerouslySetInnerHTML={this.formatForumPost()} /></div>}
+              {this.state.confirmation && 
+                <div id="confirmation">
+                  <a className="btn close-button align-right" onClick={this.onCloseForumPost}>X</a>
+                  <div dangerouslySetInnerHTML={this.formatForumPost()} />
+                </div>}
             </center>
             <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
@@ -290,7 +294,7 @@ class App extends Component {
             <p>There will then follow a seeded single-elimination bracket tournament. The winner of this tournament also receives automatic Iron promotion. The runner-up obtains the right to an immediate <strong>promotion match</strong> against the 3rd Place finisher of Iron.</p>
             <p>In Iron, everyone who did not finish 1st or 2nd is at risk! 4th-6th place are automatically demoted to make room for Challenger promotees as above. 3rd Place is subject to a <strong>hazard match</strong> vs. the runner-up of the Challenger tournament.</p>
             <h2>Match Rules</h2>
-            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="https://draftmeaspy.party/" rel="noopener noreferrer" target="_blank">here</a></strong></p>
+            <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="http://draftmeaspy.party/" rel="noopener noreferrer" target="_blank">here</a></strong></p>
             <h3>Regular Season Matches</h3>
             <p>A regular season match consists of a maximum of twelve games over four maps, drafted by the players from the map pool (see below for map pool). In the draft process, the players may use any random method (like flipping a coin or LtHummus' draft utility) to determine a winner; that winner has their choice of determining who bans and drafts first, or who spies/snipes first; whichever of these options they choose, the player who lost the random toss determines the other. The players each ban one map from the map pool.</p>
             <p>Following bans, the player who banned first picks a non-banned map layout first, followed by the other. This first pick of each player will be played TWICE (twice each as spy and sniper for each player). Then each player picks a further map which will be played ONCE. </p>
@@ -328,7 +332,7 @@ class App extends Component {
             <figcaption>Terrace 3/5 </figcaption></figure></span>
             <span className="map-images">
             <figure className="map-figures"><img src={Pub} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
-            <figcaption>Pub 4/6 - 16 guests</figcaption></figure></span>
+            <figcaption>Pub 4/7 - 16 guests</figcaption></figure></span>
             <span className="map-images">
             <figure className="map-figures"><img src={HighRise} className="smaller-image" alt="map" alt-text="Ballroom 4/8"/>
             <figcaption>High-Rise 3/5</figcaption></figure></span>

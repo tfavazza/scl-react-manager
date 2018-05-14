@@ -13,7 +13,7 @@ const WeekBlock = props => {
  				key={number}
  				name={number} 
  				// eslint-disable-next-line
- 				className={`${props.selectedWeek == number && "selected"} h1 btn btn-success cursor big-font text-center col`} 
+ 				className={`${props.selectedWeek == number && "btn-primary"} h1 btn cursor big-font text-center col`} 
  				onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}
  			>{number}
  			</button>)

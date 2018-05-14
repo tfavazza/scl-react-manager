@@ -18,19 +18,23 @@ const StandingsTable = props => {
     },
     {
       Header: 'Score',
-      accessor: 'score'
+      accessor: 'score',
+      filterable: false
     }, 
     {
       Header: 'Wins',
-      accessor: 'wins'
+      accessor: 'wins',
+      filterable: false      
     },
     {
       Header: 'Losses',
-      accessor: 'losses'
+      accessor: 'losses',
+      filterable: false
     },
     {
       Header: 'Draws',
-      accessor: 'draws'
+      accessor: 'draws',
+      filterable: false
     }]
 return (
   <div className="">
@@ -40,13 +44,12 @@ return (
     />  <div className="h3">Click a player's name to get their full schedule and match results</div>
     <div className="react-table table-size h4">
     <ReactTable 
-    filterable
     defaultFilterMethod={props.filterMethod}
     className="-striped -highlight text-center" 
     data={standingsData} 
     columns={columns} 
     defaultPageSize={10}
-    pageSizeOptions={[10, 20, 30]}
+    pageSizeOptions={[10, 20, 50, 100]}
     />
     </div>
   </div>

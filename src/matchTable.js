@@ -43,7 +43,7 @@ return (
     data={matchData} 
     columns={columns} 
     defaultPageSize={10}
-    pageSizeOptions={[10, 20, 50, 100]}
+    pageSizeOptions={[10, 20, 30, 100]}
     />
   </div>
   )

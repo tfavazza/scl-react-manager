@@ -34,6 +34,12 @@
 [data-success] {
     padding:5px 0;
   }
+  [data-tint="1"] {
+    background-color: #e7f3e7;
+  }
+  [data-tint="2"] {
+    background-color: #ffe7e7;
+  }
   
 [data-success="1"]:before {
     content:"\a0";
@@ -141,8 +147,10 @@ hr {
 .block {
   flex-wrap: all
 }
-.selected{
-  box-shadow:0px 12px 22px 1px #333;
+.selected {
+  background-color: white;
+  border-radius: 11%
+  
 }
 .react-table {
   margin: 20px;

@@ -30,9 +30,9 @@ const PlayerBlock = props => {
     {games.map((prop) => {
       const leagueName = prop.league;
       return (
-        <div className="alt-color block" key={prop.id}>
+        <div  className="alt-color block" key={prop.id}>
             <li className="week-tabs h4 list-group-item col-md-12 col-sm-12 col-lg-4" data-success={prop.status}>
-              <div className="panel-heading" role="tab" id="heading">
+              <div data-tint={prop.status} className="panel-heading" role="tab" id="heading">
                 <div className="media">
                   <div className="ml-3 col-4 float-right" >
                    <img alt={leagueName} align="right" src={images[leagueName]} height="70"/>
@@ -56,7 +56,7 @@ const PlayerBlock = props => {
                   {!prop.forfeitWinner ?
                   (<a className="player-names" href={prop.matchUrl}>REPLAYS</a>) 
                   :
-                   <span>FORFEITTED</span>
+                   <span>FORFEITED</span>
                   }
                 </span>) :
           <span>Not Played</span>
