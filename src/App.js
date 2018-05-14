@@ -49,7 +49,7 @@ class App extends Component {
      recapOpen: false,
      scheduleOpen: false,
      fileName: '',
-     url: "https://scl.spypartyfans.com/api/" 
+     url: "https://scl.spypartyfans.com/api/"
    }
  }
  static defaultProps = {
@@ -208,7 +208,7 @@ class App extends Component {
               </div>
               {this.state.confirmation && 
                 <div id="confirmation">
-                  <a className="btn close-button align-right" onClick={this.onCloseForumPost}>X</a>
+                  <a className="btn close-button align-right" onClick={this.onCloseForumPost}>x</a>
                   <div dangerouslySetInnerHTML={this.formatForumPost()} />
                 </div>}
             </center>

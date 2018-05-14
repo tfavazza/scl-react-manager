@@ -186,11 +186,12 @@ hr {
   padding: 10px;
 }
 .close-button {
-  text-align-last: right;
-  align-self: right;
-  align-content: right;
-  text-align: right;
-  text-align-last: right;
+  float: right;
+  padding: 0 0;
+  margin: 0;
+  border-top-width: 0;
+  font-size: 4.5vh;
+  color: black;
 }
 /* 
 to hide the buttonness of the button
