@@ -232,6 +232,11 @@ to hide the buttonness of the button
 .division-image {
   height: 150px;
 }
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 @media (max-width:767px) {
   .division-image {
     height: 100px;
@@ -254,3 +259,4 @@ to hide the buttonness of the button
     font-size: 1.2vh;
   }
 }
+
