@@ -226,6 +226,7 @@ class App extends Component {
                 <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
               </li>
             </ul>
+            <br/>
           {this.state.isVisible.isPrevWeeksVisible && 
             <WeeksBlock
               selectedWeek={this.state.selectedWeek}
