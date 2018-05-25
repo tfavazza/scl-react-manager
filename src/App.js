@@ -76,17 +76,6 @@ class App extends Component {
     return leagueWeek;
   }  
 
-
-  filterMethod = (filter, row) => { 
-    if (!row) {
-      console.log(this.state);
-      row = this.state.matchData;
-    }
-    console.log(row);
-    console.log(filter.id);
-    console.log(filter.value);
-    return row[filter.id].startsWith(filter.value)
-  }
   getGamesForAWeek = (gamesState, week) => {
     if (!week)
       {week = 1};
@@ -94,10 +83,6 @@ class App extends Component {
     .then(res => res.json())
     .then(res=> this.setState({[gamesState]: res, selectedWeek: week}))
   };
-
-  getLeagueStatus = (league) => {
-    fetch(this.state.url + "match")
-  }
 
   getGameRecap = (id) => {
     fetch(this.state.url + "match/" + id)
@@ -148,6 +133,7 @@ class App extends Component {
   };
   uploadZip = (e) => {
     e.preventDefault();
+    this.setState({fileName: 'Loading...'})
     const data = new FormData();
     data.append('file', this.state.file);
     fetch(this.state.url + 'match/parse', {
@@ -157,7 +143,11 @@ class App extends Component {
     .then(res => res.json())
     .then(res => 
       this.setState(
-        {confirmation: res.errorMessage ? res.errorMessage : res.forumPost}
+        {
+          confirmation: res.errorMessage ? res.errorMessage : res.forumPost,
+          file: null,
+          fileName: res.errorMessage ? 'Failed' : 'Success!'
+        }
       )
     )
   }
@@ -166,6 +156,7 @@ class App extends Component {
       this.setState({file: e.target.files[0], fileName: e.target.files[0].name});
     }
   }
+
   onWodar = () => {
         //canvas init
     const canvas = document.getElementById("canvas");
@@ -292,27 +283,38 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+                          <canvas id="canvas"></canvas>
         <header className="App-header">
           <img src={logo} className="App-logo img-fluid" height="375" alt="the logo" />
         </header>
           <div className="container">
-              <canvas id="canvas"></canvas>
-            <center>
-              <div id="upload-file">
-                <h3>Upload your .zip replay files</h3>
-                <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
-                  <input type="file" name="file" id="file" className="ugly-input" />
-                  <label className="btn" htmlFor="file">CLICK HERE TO ADD YOUR REPLAYS</label>
-                  <output name="list" id="list"></output><label htmlFor="list">{this.state.fileName || ''}</label><br/>
-                  <input type="submit" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip} value="Upload" />
-                </form>
-              </div>
+          <div className="text-center">
+                            <h3>Upload your .zip replay files</h3>
+
+                                        <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
+                                        <label class="btn btn-default">
+                                        Browse Files<input type="file" className="ugly-input" hidden />
+                                        </label>
+                  <output name="list" id="list"></output><label htmlFor="list">{this.state.fileName || 'No file selected'}</label><br/>
+
+
+
+
+             <button type="submit" class="btn btn-primary" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip}>Submit</button>
+
+
+
+            </form>
+
+
               {this.state.confirmation && 
                 <div id="confirmation">
-                  <a className="btn close-button align-right" onClick={this.onCloseForumPost}>x</a>
+                  <button className="btn close-button align-right" onClick={this.onCloseForumPost}>x</button>
                   <div dangerouslySetInnerHTML={this.formatForumPost()} />
+                  {this.state.confirmation && <a href="https://secure.spyparty.com/beta/forums/viewtopic.php?f=10&t=3071">Forum Link</a>}
                 </div>}
-            </center>
+                </div>
+          <div className="fix-index">
             <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games By Week</a>
@@ -477,6 +479,7 @@ class App extends Component {
             <p>Anyone may join the league by signing up in a given season's signup thread, posted prior to the commencement of new seasons. New players will enter the bottom league at the beginning of the next regular season. More experienced players may be placed higher than this at the discretion of the league administrator.</p>
 
           </div>}
+          </div>
         </div>
         <footer className="bd-footer text-muted">
   <div className="container">

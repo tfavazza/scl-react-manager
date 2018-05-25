@@ -187,10 +187,9 @@ hr {
 }
 .close-button {
   float: right;
-  padding: 0 0;
+  padding: 0 0 0 0;
   margin: 0;
-  border-top-width: 0;
-  font-size: 4.5vh;
+  font-size: 2.5vh;
   color: black;
 }
 /* 
@@ -214,7 +213,7 @@ to hide the buttonness of the button
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
 }
 .big-font {
   font-size: 5vh;
@@ -237,6 +236,12 @@ to hide the buttonness of the button
   top: 0;
   left: 0;
 }
+.fix-index {
+  z-index: 1;
+}
+.modal-width {
+  min-width: 500px;
+}
 @media (max-width:767px) {
   .division-image {
     height: 100px;
@@ -257,6 +262,9 @@ to hide the buttonness of the button
   }
   .map-figures {
     font-size: 1.2vh;
+  }
+  .modal-width {
+    min-width: 1vh;
   }
 }
 
