@@ -279,12 +279,18 @@ class App extends Component {
       })
     )
   }
-
+  static linkStyle = {
+        fontFamily: 'agencyfb',
+        fontWeight: 'bold',
+        margin: 0,
+        padding: 0
+      }
   render() {
     return (
       <div className="App">
                           <canvas id="canvas"></canvas>
         <header className="App-header">
+        <h3 className="text-right" style={this.linkStyle}><a className="white" href="http://www.spypartyfans.com">Back to SpyPartyFans</a></h3>
           <img src={logo} className="App-logo img-fluid" height="375" alt="the logo" />
         </header>
           <div className="container">
