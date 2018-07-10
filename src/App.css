@@ -68,6 +68,12 @@
 .green {
   color: green;
 }
+.justify {
+  text-align: justify;
+}
+.grey {
+  color: grey;
+}
 .padding {
   padding: 2px;
 }

@@ -30,7 +30,8 @@ class App extends Component {
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
         isRules: false,
-        isPrevWeeksVisible: true
+        isPrevWeeksVisible: true,
+        isPostSeasonVisible: false,
       },
      gamesThisWeek: [],
      selectedWeekGames: [],
@@ -49,7 +50,8 @@ class App extends Component {
      recapOpen: false,
      scheduleOpen: false,
      fileName: '',
-     url: "https://scl.spypartyfans.com/api/"
+     url: "https://scl.spypartyfans.com/api/",
+     formData: {}
    }
  }
  static defaultProps = {
@@ -95,14 +97,29 @@ class App extends Component {
     this.setState({selectedLeague: e.target.name})
     this.fetchSelectedLeague(e.target.name);
   }
-
+  getGamesForPostSeason = () => {
+    fetch(this.state.url + "match/week/" + 11)
+    .then(res => res.json())
+    .then(res=> this.setState({selectedWeekGames: res, selectedWeek: 11}))
+  }
+ getPlayerWLD = (player) => {
+  if (player) {
+    fetch(this.state.url + 'player/' + player + '/matches')
+    .then(res => res.json())
+    .then(res => this.setState({formData: {...this.state.formData, [player]: res.matches.map(match => match.scoreSummary)} }))
+  }
+}
   fetchSelectedLeague = (league = null) => {
     if (!league) {
       league = 'Diamond';
     }
     fetch(this.state.url + "league/" + league)
     .then(res => res.json())
-    .then(res => this.setState({standingsData: res}))
+    .then(res => {
+      res.players.forEach(player => this.getPlayerWLD(player.name));
+     // res.players.map(player => player.name).forEach(name => this.getPlayerWLD(name));
+      this.setState({standingsData: res})
+    })  
   }
   getPlayerInfo = (player) => {
     this.setState({currentPlayer: player});
@@ -169,7 +186,7 @@ class App extends Component {
     canvas.height = H;
 
     //snowflake particles
-    const mp = 200; //max particles
+    const mp = 800; //max particles
     const particles = [];
     for (var i = 0; i < mp; i++) {
         particles.push({
@@ -213,7 +230,7 @@ class App extends Component {
             //We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
             //Every particle has its own density which can be used to make the downward movement different for each flake
             //Lets make it more random by adding in the radius
-            p.y += Math.cos(angle + p.d) + 1 + p.r / 2;
+            p.y += Math.cos(angle + p.d) + 2 + p.r / 2;
             p.x += Math.sin(angle) * 2;
 
             //Sending flakes back from the top when it exits
@@ -331,6 +348,9 @@ class App extends Component {
               <li className={`${this.state.isVisible.isAllGamesVisible && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
               </li>
+              <li className={`${this.state.isVisible.isPostSeasonVisible && "active"} h3 cursor`}>
+                <a className={`${this.state.isVisible.isPostSeasonVisible && "active"}`} data-toggle="tab" name="isPostSeasonVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Post Season</a>
+              </li>              
               <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
               </li>
@@ -342,6 +362,8 @@ class App extends Component {
               getGamesForAWeek={this.getGamesForAWeek}
               selectedWeekGames={this.state.selectedWeekGames}
               getGameRecap={(value) => this.getGameRecap(value)}
+              getPlayerSchedule={(name) => this.getPlayerSchedule(name)}
+              getGamesForPostSeason={this.getGamesForPostSeason}
             />
           }
           {this.state.isVisible.isStandingsVisible && 
@@ -350,6 +372,7 @@ class App extends Component {
               getSelectedLeague={this.getSelectedLeague}
               getPlayerInfo={this.getPlayerInfo}
               selectedLeague={this.state.selectedLeague}
+              formData={this.state.formData}
             />
           }
           {this.state.isVisible.isAllGamesVisible &&

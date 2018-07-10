@@ -22,6 +22,9 @@ const PlayerBlock = props => {
   const getGameRecap = (id) => {
     props.getGameRecap(id);
   }
+  const getPlayerSchedule = (player) => {
+    props.getPlayerSchedule(player);
+  }
 
   const games = props.gamesThisWeek
   return (
@@ -38,11 +41,11 @@ const PlayerBlock = props => {
                    <img alt={leagueName} align="right" src={images[leagueName]} height="70"/>
                    </div>
                    <div className="player-names col-6 float-left">
-                      <span className={`flag-icon flag-icon-${prop.player1.country}`}></span> {prop.player1.name}
+                      <span className={`flag-icon flag-icon-${prop.player1.country}`}></span>  <a className="cursor" onClick={(e) => getPlayerSchedule(prop.player1.name)}>{prop.player1.name}</a>
                     </div>
                     <br/>
                     <div className="player-names col-6 float-left">
-                      <span className={`flag-icon flag-icon-${prop.player2.country}`}></span> {prop.player2.name}
+                      <span className={`flag-icon flag-icon-${prop.player2.country}`}></span> <a className="cursor" onClick={(e) => getPlayerSchedule(prop.player2.name)}>{prop.player2.name}</a>
                     </div>
                   </div>
                 <div>

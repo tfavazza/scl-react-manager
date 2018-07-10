@@ -3,39 +3,81 @@ import ReactTable from 'react-table';
 import PropTypes from 'prop-types';
 import Divisions from './divisions'
 
+
 const StandingsTable = props => {
+    const formData = props.formData;
+
+    const getWLD = row => {
+      return (<div>
+        {formData[row.row.name] ? 
+          formData[row.row.name].map(result => {
+            if (result === undefined ) {
+              return (<span className="grey">U</span>)
+            } else if (result.startsWith('TieParty')) {
+              return(<span>D</span>)
+            }
+              else if(result.startsWith(row.row.name)) {
+              return (<span className="green">W</span>);
+            } else {
+              return(<span className="red">L</span>)
+            }
+          }
+          ).concat()
+         : (<span>Loading...</span>)}
+        </div>)
+      }
+  
   const standingsData = props.standingsData ? props.standingsData.players : []
+  
   const getPlayerLink = row => {
-    return row.row.name ? (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) : ''
+    return row.row.name ? 
+    (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) 
+    : ''
   }
-
-
-
-    const columns = [{
+  const getAllPlayerMatches = row => {
+    return <a href="http://www.google.com">REPLAYS</a>
+  }
+  const columns = [{
       Header: 'Name',
       accessor: 'name',
-      Cell: getPlayerLink
+      Cell: getPlayerLink,
+      width: 200
     },
     {
       Header: 'Score',
       accessor: 'score',
-      filterable: false
+      filterable: false,
+      width: 100
     }, 
     {
       Header: 'Wins',
       accessor: 'wins',
-      filterable: false      
+      filterable: false,
+      width: 100      
     },
     {
       Header: 'Losses',
       accessor: 'losses',
-      filterable: false
+      filterable: false,
+      width: 100
     },
     {
       Header: 'Draws',
       accessor: 'draws',
-      filterable: false
-    }]
+      filterable: false,
+      width: 100
+    },
+    {
+      Header: 'Forms',
+      Cell: getWLD,
+      width: 300,
+      className: "justify"
+    },
+    {
+      Header: 'Games Played',
+      Cell: getAllPlayerMatches
+    }
+    ]
 return (
   <div className="">
     <Divisions
