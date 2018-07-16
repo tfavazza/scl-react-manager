@@ -303,9 +303,6 @@ class App extends Component {
         padding: 0
       }
   render() {
-        const regexPlayers = /(?:\S+\s)?\S*vs\S*(?:\s\S+)?/;
-        const test = "krazycale%20vs%20kcmmmmmm".match(regexPlayers);
-        console.log(test);
     return (
       <div className="App">
                           <canvas id="canvas"></canvas>

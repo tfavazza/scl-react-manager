@@ -5,20 +5,21 @@ import Divisions from './divisions'
 
 
 const StandingsTable = props => {
-    const formData = props.formData;
-    const getWLD = row => {
+  const formData = props.formData;
+  const regexPlayers = /(?:\S+\s)?\S*vs\S*(?:\s\S+)?/;
+  const getWLD = row => {
       return (<div>
         {formData[row.row.name] ? 
           formData[row.row.name].scoreSummary.map((result, index) => {
             if (result === undefined ) {
-              return (<span className="grey">U</span>)
+              return (<span title="unknown" className="grey">U</span>)
             } else if (result.startsWith('TieParty')) {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span className="black">D</span></a>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="black">D</span></a>)
             }
               else if(result.startsWith(row.row.name)) {
-              return (<a href={formData[row.row.name].matchUrl[index]}><span className="green">W</span></a>);
+              return (<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="green">W</span></a>);
             } else {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span className="red">L</span></a>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="red">L</span></a>)
             }
           }
           ).concat()
@@ -60,9 +61,10 @@ const StandingsTable = props => {
       filterable: false
     },
     {
-      Header: 'Forms',
+      Header: 'Forms (click to download)',
       Cell: getWLD,
-      className: "justify"
+      className: "justify",
+      width: 300
     }
     ]
 return (
