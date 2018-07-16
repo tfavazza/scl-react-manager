@@ -6,20 +6,19 @@ import Divisions from './divisions'
 
 const StandingsTable = props => {
     const formData = props.formData;
-
     const getWLD = row => {
       return (<div>
         {formData[row.row.name] ? 
-          formData[row.row.name].map(result => {
+          formData[row.row.name].scoreSummary.map((result, index) => {
             if (result === undefined ) {
               return (<span className="grey">U</span>)
             } else if (result.startsWith('TieParty')) {
-              return(<span>D</span>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span className="black">D</span></a>)
             }
               else if(result.startsWith(row.row.name)) {
-              return (<span className="green">W</span>);
+              return (<a href={formData[row.row.name].matchUrl[index]}><span className="green">W</span></a>);
             } else {
-              return(<span className="red">L</span>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span className="red">L</span></a>)
             }
           }
           ).concat()
@@ -34,48 +33,36 @@ const StandingsTable = props => {
     (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) 
     : ''
   }
-  const getAllPlayerMatches = row => {
-    return <a href="http://www.google.com">REPLAYS</a>
-  }
+
   const columns = [{
       Header: 'Name',
       accessor: 'name',
-      Cell: getPlayerLink,
-      width: 200
+      Cell: getPlayerLink
     },
     {
       Header: 'Score',
       accessor: 'score',
-      filterable: false,
-      width: 100
+      filterable: false
     }, 
     {
       Header: 'Wins',
       accessor: 'wins',
-      filterable: false,
-      width: 100      
+      filterable: false   
     },
     {
       Header: 'Losses',
       accessor: 'losses',
-      filterable: false,
-      width: 100
+      filterable: false
     },
     {
       Header: 'Draws',
       accessor: 'draws',
-      filterable: false,
-      width: 100
+      filterable: false
     },
     {
       Header: 'Forms',
       Cell: getWLD,
-      width: 300,
       className: "justify"
-    },
-    {
-      Header: 'Games Played',
-      Cell: getAllPlayerMatches
     }
     ]
 return (

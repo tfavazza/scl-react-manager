@@ -106,7 +106,7 @@ class App extends Component {
   if (player) {
     fetch(this.state.url + 'player/' + player + '/matches')
     .then(res => res.json())
-    .then(res => this.setState({formData: {...this.state.formData, [player]: res.matches.map(match => match.scoreSummary)} }))
+    .then(res => this.setState({formData: {...this.state.formData, [player]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
   }
 }
   fetchSelectedLeague = (league = null) => {
@@ -303,6 +303,9 @@ class App extends Component {
         padding: 0
       }
   render() {
+        const regexPlayers = /(?:\S+\s)?\S*vs\S*(?:\s\S+)?/;
+        const test = "krazycale%20vs%20kcmmmmmm".match(regexPlayers);
+        console.log(test);
     return (
       <div className="App">
                           <canvas id="canvas"></canvas>
@@ -319,17 +322,8 @@ class App extends Component {
                                         Browse Files<input type="file" className="ugly-input" hidden />
                                         </label>
                   <output name="list" id="list"></output><label htmlFor="list">{this.state.fileName || 'No file selected'}</label><br/>
-
-
-
-
              <button type="submit" class="btn btn-primary" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip}>Submit</button>
-
-
-
             </form>
-
-
               {this.state.confirmation && 
                 <div id="confirmation">
                   <button className="btn close-button align-right" onClick={this.onCloseForumPost}>x</button>
@@ -382,6 +376,9 @@ class App extends Component {
               getSelectedLeague={this.getSelectedLeague}
               getGameRecap={this.getGameRecap}
             />
+          }
+          {this.state.isVisible.isPostSeasonVisible && 
+            <h1>Coming Soon&#8482;</h1>
           }
           {this.state.schedule && 
             <ModalWrapper
