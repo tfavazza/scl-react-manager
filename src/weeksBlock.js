@@ -18,13 +18,13 @@ const WeekBlock = props => {
  			>{number}
  			</button>)
  	})}
- 	<button key="postseason" name="postseason" className={`${props.selectedWeek == 'postseason' && "btn-primary"} h1 btn cursor big-font text-center col`} onClick={e => props.getGamesForPostSeason('selectedWeekGames', e.target.name)}>Playoffs</button>
+ 	<button key="postseason" name="11" className={`${props.selectedWeek === '11' && "btn-primary"} h1 btn cursor big-font text-center col`} onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}>Playoffs</button>
  	</div>
-  {props.selectedWeekGames && <div className="container"><PlayerBlock 
+  {props.selectedWeekGames ? <div className="container"><PlayerBlock 
     gamesThisWeek={props.selectedWeekGames}
     getGameRecap={(value) => props.getGameRecap(value)}
     getPlayerSchedule={(name) => props.getPlayerSchedule(name)}
-  /> </div>} 
+  /> </div> : <h1>Coming Soon &#8482;</h1>} 
 </div>
   )
 }

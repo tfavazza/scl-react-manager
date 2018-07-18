@@ -240,6 +240,10 @@ to hide the buttonness of the button
 .division-image {
   height: 150px;
 }
+
+.checker {
+  background-color: yellow;
+}
 #canvas {
   position: fixed;
   top: 0;

@@ -24,6 +24,7 @@ class App extends Component {
     super(props);
     this.state = {
       wodar: null,
+      checker: null,
       matchData: [],
        isVisible: {
         isStandingsVisible: false,
@@ -67,6 +68,9 @@ class App extends Component {
     }))
   }
 
+onChecker = () => {
+  this.setState({checker: 'checker'} );
+}
 // hard coding the start of SCL woo!
   getCurrentWeek = () => {
     const startDate =  new Date('Sat May 05 2018 00:00:01 GMT-0400 (Eastern Daylight Time)');
@@ -311,16 +315,17 @@ class App extends Component {
           <img src={logo} className="App-logo img-fluid" height="375" alt="the logo" />
         </header>
           <div className="container">
-          <div className="text-center">
-                            <h3>Upload your .zip replay files</h3>
-
-                                        <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
-                                        <label class="btn btn-default">
-                                        Browse Files<input type="file" className="ugly-input" hidden />
-                                        </label>
-                  <output name="list" id="list"></output><label htmlFor="list">{this.state.fileName || 'No file selected'}</label><br/>
-             <button type="submit" class="btn btn-primary" id="zip-file" className="btn btn-primary"  onClick={this.uploadZip}>Submit</button>
-            </form>
+            <div className="text-center">
+              <h3>Upload your .zip replay files</h3>
+                <form encType="multipart/form-data" id="zip-form" onChange={this.onFileSet}>
+                  <label className={`btn ${this.state.checker ? this.state.checker : "btn-default"}`}>
+                    Browse Files<input type="file" className="ugly-input" hidden />
+                  </label>
+                  <output name="list" id="list"></output>
+                  <label htmlFor="list">{this.state.fileName || 'No file selected'}</label>
+                  <br/>
+                  <button type="submit" id="zip-file" className="btn btn-primary" onClick={this.uploadZip}>Submit</button>
+                </form>
               {this.state.confirmation && 
                 <div id="confirmation">
                   <button className="btn close-button align-right" onClick={this.onCloseForumPost}>x</button>
@@ -340,7 +345,7 @@ class App extends Component {
                 <a className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
               </li>
               <li className={`${this.state.isVisible.isPostSeasonVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isPostSeasonVisible && "active"}`} data-toggle="tab" name="isPostSeasonVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Post Season</a>
+                <a className={`${this.state.isVisible.isPostSeasonVisible && "active"}`} data-toggle="tab" name="isPostSeasonVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Challenger Bracket</a>
               </li>              
               <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
                 <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
@@ -375,7 +380,16 @@ class App extends Component {
             />
           }
           {this.state.isVisible.isPostSeasonVisible && 
-            <h1>Coming Soon&#8482;</h1>
+            <iframe 
+              title="Challenger Bracket"
+              src="https://challonge.com/SCL4Challenger/module?&show_standing=1&show_final_results=1&match_width_multipler&theme=5" 
+              width="100%" 
+              height="500" 
+              frameborder="0" 
+              scrolling="auto" 
+              allowtransparency="true"
+            >
+            </iframe>
           }
           {this.state.schedule && 
             <ModalWrapper
@@ -509,7 +523,7 @@ class App extends Component {
     <div className="h4 text-center">
       SCL Manager was made by <a href="https://www.twitter.com/lthummus" rel="noopener noreferrer" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" rel="noopener noreferrer" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" rel="noopener noreferrer" target="_blank">kaplOw</a>.
       SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" rel="noopener noreferrer" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" rel="noopener noreferrer" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
-      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course Checker. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
+      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course <a className={`wodar ${this.state.checker}`} onClick={this.onChecker}>Checker</a>. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
     </div>
   </div>
 </footer>

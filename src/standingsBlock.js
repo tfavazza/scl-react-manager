@@ -38,7 +38,8 @@ const StandingsTable = props => {
   const columns = [{
       Header: 'Name',
       accessor: 'name',
-      Cell: getPlayerLink
+      Cell: getPlayerLink,
+      width: 250
     },
     {
       Header: 'Score',
@@ -63,7 +64,6 @@ const StandingsTable = props => {
     {
       Header: 'Forms (click to download)',
       Cell: getWLD,
-      className: "justify",
       width: 300
     }
     ]
