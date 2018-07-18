@@ -62,7 +62,7 @@ const StandingsTable = props => {
       filterable: false
     },
     {
-      Header: 'Forms (click to download)',
+      Header: 'Form (click to download)',
       Cell: getWLD,
       width: 300
     }
@@ -72,7 +72,7 @@ return (
     <Divisions
       getSelectedLeague={props.getSelectedLeague}
       selectedLeague= {props.selectedLeague}
-    />  <div className="h3">Click a player's name to get their full schedule and match results</div>
+    />  <div className="h4">Click a player's name to get their full schedule and match results. Hover over <strong><span className="green courier">W</span><span className="red courier">L</span><span className="courier" >D</span></strong> to see opponent, click letter to download match.</div>
     <div className="react-table table-size h4">
     <ReactTable 
     defaultFilterMethod={props.filterMethod}
