@@ -12,14 +12,14 @@ const StandingsTable = props => {
         {formData[row.row.name] ? 
           formData[row.row.name].scoreSummary.map((result, index) => {
             if (result === undefined ) {
-              return (<span title="unknown" className="grey">U</span>)
+              return (<span title="unknown" className="grey courier">U</span>)
             } else if (result.startsWith('TieParty')) {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="black">D</span></a>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="black courier">D</span></a>)
             }
               else if(result.startsWith(row.row.name)) {
-              return (<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="green">W</span></a>);
+              return (<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="green courier">W</span></a>);
             } else {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="red">L</span></a>)
+              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="red courier">L</span></a>)
             }
           }
           ).concat()

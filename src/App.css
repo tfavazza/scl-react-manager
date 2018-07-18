@@ -240,7 +240,10 @@ to hide the buttonness of the button
 .division-image {
   height: 150px;
 }
-
+.courier {
+  font-family: courier;
+  font-size: 2.5vh;
+}
 .checker {
   background-color: yellow;
 }
