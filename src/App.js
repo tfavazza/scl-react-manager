@@ -434,6 +434,7 @@ onChecker = () => {
             <p>The lowest division is Challenger Division. Instead of a double round robin, the Challenger Division regular season consists of a Swiss event. The top two finishers will be promoted to Iron automatically. </p>
             <p>There will then follow a seeded single-elimination bracket tournament. The winner of this tournament also receives automatic Iron promotion. The runner-up obtains the right to an immediate <strong>promotion match</strong> against the 3rd Place finisher of Iron.</p>
             <p>In Iron, everyone who did not finish 1st or 2nd is at risk! 4th-6th place are automatically demoted to make room for Challenger promotees as above. 3rd Place is subject to a <strong>hazard match</strong> vs. the runner-up of the Challenger tournament.</p>
+            <p><strong>Challenger Bracket Tiebreaker:</strong> If games finish 8-8, one player "cuts" the other "picks."  The "cutter" selects any map, any possible layout, except there must be the default number of guests. The "picker" picks whether to spy or snipe. The higher-seeded player chooses who "cuts" and who "picks." Only one game is played. Winner take all.</p>
             <h2>Match Rules</h2>
             <p><strong>Players are encouraged to use LtHummus' browser-based utility for setting up their matches. It can be found <a href="http://draftmeaspy.party/" rel="noopener noreferrer" target="_blank">here</a></strong></p>
             <h3>Regular Season Matches</h3>
