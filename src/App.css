@@ -165,7 +165,7 @@ hr {
   margin: 20px;
 }
 
-.map {
+.venue {
   display: block;
 }
 #confirmation {
@@ -174,7 +174,7 @@ hr {
   text-align: left;
   padding: 1%;
 }
-.map-figures {
+.venue-figures {
   display: inline-block;
   max-width: 25%;
   margin: 0 3%;
@@ -276,7 +276,7 @@ to hide the buttonness of the button
   .table-size {
     font-size: 2vh;
   }
-  .map-figures {
+  .venue-figures {
     font-size: 1.2vh;
   }
   .modal-width {
