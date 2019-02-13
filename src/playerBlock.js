@@ -33,7 +33,6 @@ const PlayerBlock = props => {
   const games = props.gamesThisWeek
   return (
     <div>
-
     {games.map((prop) => {
       const leagueName = prop.league;
       return (

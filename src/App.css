@@ -182,7 +182,7 @@ hr {
 }
 .division-figures {
   display: inline-block;
-  max-width: 25%;
+  max-width: 20%;
 }
 .smaller-image {
   max-height: 100%;
@@ -238,7 +238,7 @@ to hide the buttonness of the button
   position: relative;
 }
 .division-image {
-  height: 150px;
+  height: 110px;
 }
 .courier {
   font-family: courier;

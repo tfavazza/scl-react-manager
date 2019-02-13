@@ -18,10 +18,10 @@ class App extends Component {
       checker: null,
       matchData: [],
        isVisible: {
-        isStandingsVisible: false,
+        isStandingsVisible: true,
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
-        isRules: true,
+        isRules: false,
         isPrevWeeksVisible: false,
         isPostSeasonVisible: false,
       },
@@ -42,7 +42,7 @@ class App extends Component {
      recapOpen: false,
      scheduleOpen: false,
      fileName: '',
-     url: "http://localhost:8082/api/",
+     url: "https://scl.spypartyfans.com/api/",
      formData: {}
    }
  }

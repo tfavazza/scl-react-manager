@@ -7,6 +7,8 @@ import Copper from './scl_rank_badges/scl_badge_copper.svg'
 import Iron from './scl_rank_badges/scl_badge_iron.svg'
 import Challenger from './scl_rank_badges/scl_badge_challenger.svg'
 import Bronze from './scl_rank_badges/scl_badge_bronze.svg'
+import Bamboo from './scl_rank_badges/scl_badge_bamboo.svg'
+import Oak from './scl_rank_badges/scl_badge_oak.svg'
 
 
 class Divisions extends Component {
@@ -39,6 +41,14 @@ class Divisions extends Component {
     <figure className={`cursor ${this.props.selectedLeague === 'Iron' ? "selected": ''} division-figures`}>
       <img onClick={this.props.getSelectedLeague} alt="iron" name="Iron"  src={Iron} className="division-image"></img>
       <figcaption>Iron</figcaption>
+    </figure>
+    <figure className={`cursor ${this.props.selectedLeague === 'Bamboo' ? "selected": ''} division-figures`}>
+      <img onClick={this.props.getSelectedLeague} alt="bamboo" name="Bamboo"  src={Bamboo} className="division-image"></img>
+      <figcaption>Bamboo</figcaption>
+    </figure>
+    <figure className={`cursor ${this.props.selectedLeague === 'Oak' ? "selected": ''} division-figures`}>
+      <img onClick={this.props.getSelectedLeague} alt="iron" name="Oak"  src={Oak} className="division-image"></img>
+      <figcaption>Oak</figcaption>
     </figure>
       <figure className={`cursor ${this.props.selectedLeague === 'Challenger' ? "selected": ''} division-figures`}>
     <img onClick={this.props.getSelectedLeague} alt="challenger" name="Challenger" src={Challenger} className="division-image"></img>
