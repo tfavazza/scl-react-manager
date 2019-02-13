@@ -7,11 +7,11 @@
     "flag-icon-css": "^3.0.0",
     "gh-pages": "^1.2.0",
     "match-sorter": "^2.2.3",
-    "npm": "^6.2.0",
+    "npm": "^6.7.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-responsive-modal": "^3.1.0",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^2.1.5",
     "react-table": "^6.8.6"
   },
   "scripts": {
