@@ -8,16 +8,6 @@ import FullSchedule from './fullScheduleBlock'
 import Standings from './standingsBlock';
 import WeeksBlock from './weeksBlock';
 import PlayerSchedule from './playerSchedule';
-import Ballroom from './levels/ballroom.png';
-import Balcony from './levels/balcony.png';
-import Courtyard from './levels/courtyard.png';
-import Gallery from './levels/gallery.png';
-import HighRise from './levels/high-rise.png';
-import Library from './levels/library.png';
-import Moderne from './levels/moderne.png';
-import Pub from './levels/pub.png';
-import Terrace from './levels/terrace.png';
-import Veranda from './levels/veranda.png';
 import RulesPage from './rulesPage';
 
 class App extends Component {
@@ -52,7 +42,7 @@ class App extends Component {
      recapOpen: false,
      scheduleOpen: false,
      fileName: '',
-     url: "https://scl.spypartyfans.com/api/",
+     url: "http://localhost:8082/api/",
      formData: {}
    }
  }
@@ -60,7 +50,7 @@ class App extends Component {
   matchData: []
   };
   static propTypes = {
-    matchData: PropTypes.arrayOf(PropTypes.shape({
+    matchData: PropTypes.arrayOf(PropTypes.shape({ 
     forfeitText: PropTypes.string,
     league: PropTypes.string,
     matchType: PropTypes.string,

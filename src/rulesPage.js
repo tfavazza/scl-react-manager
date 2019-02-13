@@ -1,6 +1,4 @@
 import React from 'react';
-import Divisions from './divisions';
-import MatchTable from './matchTable';
 import Ballroom from './levels/ballroom.png';
 import Balcony from './levels/balcony.png';
 import Courtyard from './levels/courtyard.png';

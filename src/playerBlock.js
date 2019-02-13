@@ -7,6 +7,8 @@ import CopperI from './scl_rank_badges/scl_badge_copper.svg'
 import IronI from './scl_rank_badges/scl_badge_iron.svg'
 import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
 import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
+import BambooI from './scl_rank_badges/scl_badge_bamboo.svg'
+import OakI from './scl_rank_badges/scl_badge_oak.svg'
 
 const PlayerBlock = props => {
   const images = {
@@ -17,7 +19,9 @@ const PlayerBlock = props => {
     Copper: CopperI,
     Iron: IronI,
     Challenger: ChallengerI,
-    Bronze: BronzeI
+    Bronze: BronzeI,
+    Bamboo: BambooI,
+    Oak: OakI
   };
   const getGameRecap = (id) => {
     props.getGameRecap(id);
