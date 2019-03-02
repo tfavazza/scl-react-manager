@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import Diamond from './scl_rank_badges/scl_badge_diamond.svg'
 import Platinum from './scl_rank_badges/scl_badge_platinum.svg'
-import Silver from './scl_rank_badges/scl_badge_silver.svg'
 import Gold from './scl_rank_badges/scl_badge_gold.svg'
+import Silver from './scl_rank_badges/scl_badge_silver.svg'
+import Bronze from './scl_rank_badges/scl_badge_bronze.svg'
 import Copper from './scl_rank_badges/scl_badge_copper.svg'
 import Iron from './scl_rank_badges/scl_badge_iron.svg'
-import Challenger from './scl_rank_badges/scl_badge_challenger.svg'
-import Bronze from './scl_rank_badges/scl_badge_bronze.svg'
-import Bamboo from './scl_rank_badges/scl_badge_bamboo.svg'
+import Obsidian from './scl_rank_badges/scl_badge_obsidian.svg'
 import Oak from './scl_rank_badges/scl_badge_oak.svg'
+import Bamboo from './scl_rank_badges/scl_badge_bamboo.svg'
+import Challenger from './scl_rank_badges/scl_badge_challenger.svg'
 
 
 class Divisions extends Component {
@@ -42,13 +43,17 @@ class Divisions extends Component {
       <img onClick={this.props.getSelectedLeague} alt="iron" name="Iron"  src={Iron} className="division-image"></img>
       <figcaption>Iron</figcaption>
     </figure>
-    <figure className={`cursor ${this.props.selectedLeague === 'Bamboo' ? "selected": ''} division-figures`}>
-      <img onClick={this.props.getSelectedLeague} alt="bamboo" name="Bamboo"  src={Bamboo} className="division-image"></img>
-      <figcaption>Bamboo</figcaption>
-    </figure>
+    <figure className={`cursor ${this.props.selectedLeague === 'Obsidian' ? "selected": ''} division-figures`}>
+      <img onClick={this.props.getSelectedLeague} alt="obsidian" name="Obsidian"  src={Obsidian} className="division-image"></img>
+      <figcaption>Obsidian</figcaption>
+    </figure>    
     <figure className={`cursor ${this.props.selectedLeague === 'Oak' ? "selected": ''} division-figures`}>
       <img onClick={this.props.getSelectedLeague} alt="iron" name="Oak"  src={Oak} className="division-image"></img>
       <figcaption>Oak</figcaption>
+    </figure>
+    <figure className={`cursor ${this.props.selectedLeague === 'Bamboo' ? "selected": ''} division-figures`}>
+      <img onClick={this.props.getSelectedLeague} alt="bamboo" name="Bamboo"  src={Bamboo} className="division-image"></img>
+      <figcaption>Bamboo</figcaption>
     </figure>
       <figure className={`cursor ${this.props.selectedLeague === 'Challenger' ? "selected": ''} division-figures`}>
     <img onClick={this.props.getSelectedLeague} alt="challenger" name="Challenger" src={Challenger} className="division-image"></img>

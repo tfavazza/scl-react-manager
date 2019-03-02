@@ -1,14 +1,15 @@
 import React from 'react';
 import DiamondI from './scl_rank_badges/scl_badge_diamond.svg'
 import PlatinumI from './scl_rank_badges/scl_badge_platinum.svg'
-import SilverI from './scl_rank_badges/scl_badge_silver.svg'
 import GoldI from './scl_rank_badges/scl_badge_gold.svg'
+import SilverI from './scl_rank_badges/scl_badge_silver.svg'
+import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
 import CopperI from './scl_rank_badges/scl_badge_copper.svg'
 import IronI from './scl_rank_badges/scl_badge_iron.svg'
-import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
-import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
-import BambooI from './scl_rank_badges/scl_badge_bamboo.svg'
+import ObsidianI from './scl_rank_badges/scl_badge_obsidian.svg'
 import OakI from './scl_rank_badges/scl_badge_oak.svg'
+import BambooI from './scl_rank_badges/scl_badge_bamboo.svg'
+import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
 
 const PlayerBlock = props => {
   const images = {
@@ -17,6 +18,7 @@ const PlayerBlock = props => {
     Silver: SilverI,
     Gold: GoldI,
     Copper: CopperI,
+    Obsidian: ObsidianI,
     Iron: IronI,
     Challenger: ChallengerI,
     Bronze: BronzeI,

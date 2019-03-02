@@ -18,12 +18,11 @@ class App extends Component {
       checker: null,
       matchData: [],
        isVisible: {
-        isStandingsVisible: true,
+        isStandingsVisible: false,
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
         isRules: false,
-        isPrevWeeksVisible: false,
-        isPostSeasonVisible: false,
+        isPrevWeeksVisible: true
       },
      gamesThisWeek: [],
      selectedWeekGames: [],
@@ -60,11 +59,15 @@ class App extends Component {
   }
 
 onChecker = () => {
+  if (this.state.checker === 'checker') {
+    this.setState({checker: null});
+  } else {
   this.setState({checker: 'checker'} );
+  }
 }
 // hard coding the start of SCL woo!
   getCurrentWeek = () => {
-    const startDate =  new Date('Sat May 05 2018 00:00:01 GMT-0400 (Eastern Daylight Time)');
+    const startDate =  new Date('Sat Mar 02 2019 00:00:01 GMT-0500 (Eastern Standard Time)');
     let utcDay = new Date();
     let today = utcDay - new Date().getTimezoneOffset();
     let leagueWeek = (today - startDate) / 86400000;
@@ -327,19 +330,16 @@ onChecker = () => {
           <div className="fix-index">
             <ul className="nav nav-tabs center-block text-center">
               <li className={`${this.state.isVisible.isPrevWeeksVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games By Week</a>
+                <a href="weeks" className={`${this.state.isVisible.isPrevWeeksVisible && "active"}`} data-toggle="tab" name="isPrevWeeksVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Games By Week</a>
               </li>
               <li className={`${this.state.isVisible.isStandingsVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isStandingsVisible && "active"}`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
+                <a href="standings" className={`${this.state.isVisible.isStandingsVisible && "active"}`} data-toggle="tab" name="isStandingsVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Player Standings</a>
               </li>
               <li className={`${this.state.isVisible.isAllGamesVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
-              </li>
-              <li className={`${this.state.isVisible.isPostSeasonVisible && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isPostSeasonVisible && "active"}`} data-toggle="tab" name="isPostSeasonVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Challenger Bracket</a>
-              </li>              
+                <a  href="all" className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
+              </li>           
               <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
-                <a className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
+                <a href="rules" className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
               </li>
             </ul>
             <br/>
@@ -350,7 +350,6 @@ onChecker = () => {
               selectedWeekGames={this.state.selectedWeekGames}
               getGameRecap={(value) => this.getGameRecap(value)}
               getPlayerSchedule={(name) => this.getPlayerSchedule(name)}
-              getGamesForPostSeason={this.getGamesForPostSeason}
             />
           }
           {this.state.isVisible.isStandingsVisible && 
@@ -369,18 +368,6 @@ onChecker = () => {
               getSelectedLeague={this.getSelectedLeague}
               getGameRecap={this.getGameRecap}
             />
-          }
-          {this.state.isVisible.isPostSeasonVisible && 
-            <iframe 
-              title="Challenger Bracket"
-              src="https://challonge.com/SCL4Challenger/module?&show_standing=1&show_final_results=1&match_width_multipler&theme=5" 
-              width="100%" 
-              height="500" 
-              frameborder="0" 
-              scrolling="auto" 
-              allowtransparency="true"
-            >
-            </iframe>
           }
           {this.state.schedule && 
             <ModalWrapper
@@ -418,8 +405,8 @@ onChecker = () => {
   <div className="container">
     <div className="h4 text-center">
       SCL Manager was made by <a href="https://www.twitter.com/lthummus" rel="noopener noreferrer" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" rel="noopener noreferrer" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" rel="noopener noreferrer" target="_blank">kaplOw</a>.
-      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" rel="noopener noreferrer" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" rel="noopener noreferrer" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: CanadianBacon, 
-      KrazyCaley, Elvisnake, Catnip, WarningTrack, <a className="wodar" onClick={this.onWodar}>Wodar</a>, and of course <a className={`wodar ${this.state.checker}`} onClick={this.onChecker}>Checker</a>. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
+      SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" rel="noopener noreferrer" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" rel="noopener noreferrer" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: Steph, 
+      KrazyCaley, Bananaconda, Turnout8, WarningTrack, <a href="#wodar" className="wodar" onClick={this.onWodar}>Wodar</a>, and of course <a href="#checker" className={`wodar ${this.state.checker}`} onClick={this.onChecker}>Checker</a>. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
     </div>
   </div>
 </footer>

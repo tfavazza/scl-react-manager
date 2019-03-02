@@ -4,8 +4,8 @@ import PlayerBlock from './playerBlock';
 
 
 const WeekBlock = props => {
-	const arrayOfNumbers = Array.from(new Array(10),(val,index)=>index+1);;
- return (<div>
+	const arrayOfNumbers = Array.from(new Array(13),(val,index)=>index+1);;
+ return (<div className="container">
  	<div className="numbers-row">
  	{arrayOfNumbers.map(number => {
  		return (
@@ -13,12 +13,11 @@ const WeekBlock = props => {
  				key={number}
  				name={number} 
  				// eslint-disable-next-line
- 				className={`${props.selectedWeek == number && "btn-primary"} h1 btn cursor big-font text-center col`} 
+ 				className={`${props.selectedWeek == number ? "btn-primary" : "btn-grey"} btn cursor big-font`} 
  				onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}
  			>{number}
  			</button>)
  	})}
- 	<button key="postseason" name="11" className={`${props.selectedWeek === '11' && "btn-primary"} h1 btn cursor big-font text-center col`} onClick={e => props.getGamesForAWeek('selectedWeekGames', e.target.name)}>Playoffs</button>
  	</div>
   {props.selectedWeekGames ? <div className="container"><PlayerBlock 
     gamesThisWeek={props.selectedWeekGames}

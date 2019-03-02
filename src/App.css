@@ -182,7 +182,7 @@ hr {
 }
 .division-figures {
   display: inline-block;
-  max-width: 20%;
+  max-width: 15%;
 }
 .smaller-image {
   max-height: 100%;
@@ -224,21 +224,20 @@ to hide the buttonness of the button
   position: absolute;
   z-index: 0;
 }
+.btn-grey {
+  background-color: lightgrey;
+}
 .big-font {
   font-size: 5vh;
-  display: inline-flex;
-  position: relative;
-  margin: .5% 1.5%;
+    vertical-align: top;
+      margin: .5% .75%;
 }
 .big-font:hover {
   text-decoration: none;
   position: relative;
 }
-.numbers-row {
-  position: relative;
-}
 .division-image {
-  height: 110px;
+  height: 100px;
 }
 .courier {
   font-family: courier;

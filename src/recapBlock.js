@@ -1,12 +1,15 @@
 import React from 'react';
 import DiamondI from './scl_rank_badges/scl_badge_diamond.svg'
 import PlatinumI from './scl_rank_badges/scl_badge_platinum.svg'
-import SilverI from './scl_rank_badges/scl_badge_silver.svg'
 import GoldI from './scl_rank_badges/scl_badge_gold.svg'
+import SilverI from './scl_rank_badges/scl_badge_silver.svg'
+import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
 import CopperI from './scl_rank_badges/scl_badge_copper.svg'
 import IronI from './scl_rank_badges/scl_badge_iron.svg'
+import ObsidianI from './scl_rank_badges/scl_badge_obsidian.svg'
+import OakI from './scl_rank_badges/scl_badge_oak.svg'
+import BambooI from './scl_rank_badges/scl_badge_bamboo.svg'
 import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
-import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
 import SniperI from './scl_rank_badges/icon_sniper.png'
 import SpyI from './scl_rank_badges/icon_spy.png'
 
@@ -17,12 +20,15 @@ const RecapBlock = props => {
     const division = {
       Diamond: DiamondI,
       Platinum: PlatinumI,
-      Silver: SilverI,
       Gold: GoldI,
+      Silver: SilverI,
+      Bronze: BronzeI,
       Copper: CopperI,
       Iron: IronI,
-      Challenger: ChallengerI,
-      Bronze: BronzeI
+      Obsidian: ObsidianI,
+      Oak: OakI,
+      Bamboo: BambooI,
+      Challenger: ChallengerI 
     };
     const role = {
       sniper: SniperI,
