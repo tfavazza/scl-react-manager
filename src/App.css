@@ -122,7 +122,10 @@ hr {
   background-image: url('./levels/library-blurred.png');
 }
 .Modern {
-  background-image: url('./levels/moderne-blurred.png')
+  background-image: url('./levels/moderne-blurred.png');
+}
+.Teien {
+  background-image: url('./levels/teien-blurred.png');
 }
 
 .white {

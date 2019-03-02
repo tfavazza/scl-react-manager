@@ -5,8 +5,9 @@ import PlayerBlock from './playerBlock';
 
 const WeekBlock = props => {
 	const arrayOfNumbers = Array.from(new Array(13),(val,index)=>index+1);;
- return (<div className="container">
- 	<div className="numbers-row">
+ return (<div className="">
+ 	
+ 	<div className="numbers-row text-center">
  	{arrayOfNumbers.map(number => {
  		return (
  			<button 
