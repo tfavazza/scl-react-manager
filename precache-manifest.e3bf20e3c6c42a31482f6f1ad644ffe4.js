@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "29cb205402fe1e2604c0ff87b20c03a3",
-    "url": "/scl-season-4/static/media/pub-blurred.29cb2054.png"
+    "revision": "f78769242fb5c0ec2f775f959c8ee8cd",
+    "url": "/scl-season-4/static/media/ballroom-blurred.f7876924.png"
   },
   {
-    "revision": "ef993fe3138619df445c",
-    "url": "/scl-season-4/static/css/main.9d672d91.chunk.css"
+    "revision": "a64736e2038d4d99e924",
+    "url": "/scl-season-4/static/css/main.d873d15d.chunk.css"
   },
   {
     "revision": "9187bf94cc7dfe4ec772",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/scl-season-4/static/media/teien.e56fece1.png"
   },
   {
-    "revision": "13d83c1715e80a11199b",
-    "url": "/scl-season-4/static/js/2.13d83c17.chunk.js"
+    "revision": "bad5cd61b5b436f97947",
+    "url": "/scl-season-4/static/js/2.bad5cd61.chunk.js"
   },
   {
     "revision": "61d4a75aeae930413444115bf09d2942",
@@ -28,12 +28,16 @@ self.__precacheManifest = [
     "url": "/scl-season-4/static/media/scl_badge_platinum.10d3f1f9.svg"
   },
   {
+    "revision": "191423fe01b9f9fe11dede02af4cd736",
+    "url": "/scl-season-4/static/media/scl_badge_gold.191423fe.svg"
+  },
+  {
     "revision": "9be7a1b8965abc1d712ec6379876ef55",
     "url": "/scl-season-4/static/media/scl_badge_silver.9be7a1b8.svg"
   },
   {
-    "revision": "191423fe01b9f9fe11dede02af4cd736",
-    "url": "/scl-season-4/static/media/scl_badge_gold.191423fe.svg"
+    "revision": "f3570c980f2a215c2a7d9e51fe4c4b0d",
+    "url": "/scl-season-4/static/media/scl_badge_bronze.f3570c98.svg"
   },
   {
     "revision": "8ee1af24f0516043d90319947ec1e467",
@@ -44,28 +48,20 @@ self.__precacheManifest = [
     "url": "/scl-season-4/static/media/scl_badge_iron.34980e68.svg"
   },
   {
-    "revision": "0dab3afcdac32bc73ba9ade5301562e5",
-    "url": "/scl-season-4/static/media/scl_badge_challenger.0dab3afc.svg"
-  },
-  {
-    "revision": "f3570c980f2a215c2a7d9e51fe4c4b0d",
-    "url": "/scl-season-4/static/media/scl_badge_bronze.f3570c98.svg"
-  },
-  {
-    "revision": "1adf8cdab2b53834b5d738d4234501b2",
-    "url": "/scl-season-4/static/media/scl_badge_bamboo.1adf8cda.svg"
+    "revision": "ef2a757aa2513b7773cdc71eafc6df54",
+    "url": "/scl-season-4/static/media/scl_badge_obsidian.ef2a757a.svg"
   },
   {
     "revision": "088f2db9052bd3445e52b63b58036510",
     "url": "/scl-season-4/static/media/scl_badge_oak.088f2db9.svg"
   },
   {
-    "revision": "a4b56e119a5a50f45b4b75b430094205",
-    "url": "/scl-season-4/static/media/courtyard-blurred.a4b56e11.png"
+    "revision": "d7db3829c0c249569592c1d088d3b655",
+    "url": "/scl-season-4/static/media/scl_badge_bamboo.d7db3829.svg"
   },
   {
-    "revision": "b48765f96e4371f9e78e6330202a951f",
-    "url": "/scl-season-4/static/media/balcony-blurred.b48765f9.png"
+    "revision": "0dab3afcdac32bc73ba9ade5301562e5",
+    "url": "/scl-season-4/static/media/scl_badge_challenger.0dab3afc.svg"
   },
   {
     "revision": "be2214c3b2c065a094500829abea74e3",
@@ -76,16 +72,28 @@ self.__precacheManifest = [
     "url": "/scl-season-4/static/media/high-rise-blurred.307ef4f6.png"
   },
   {
-    "revision": "ef993fe3138619df445c",
-    "url": "/scl-season-4/static/js/main.ef993fe3.chunk.js"
+    "revision": "b48765f96e4371f9e78e6330202a951f",
+    "url": "/scl-season-4/static/media/balcony-blurred.b48765f9.png"
+  },
+  {
+    "revision": "a64736e2038d4d99e924",
+    "url": "/scl-season-4/static/js/main.a64736e2.chunk.js"
   },
   {
     "revision": "9361235ed229ef69084a9930dec18552",
     "url": "/scl-season-4/static/media/library-blurred.9361235e.png"
   },
   {
-    "revision": "f78769242fb5c0ec2f775f959c8ee8cd",
-    "url": "/scl-season-4/static/media/ballroom-blurred.f7876924.png"
+    "revision": "a4b56e119a5a50f45b4b75b430094205",
+    "url": "/scl-season-4/static/media/courtyard-blurred.a4b56e11.png"
+  },
+  {
+    "revision": "29cb205402fe1e2604c0ff87b20c03a3",
+    "url": "/scl-season-4/static/media/pub-blurred.29cb2054.png"
+  },
+  {
+    "revision": "f77412d3c43efbe1acd9dd41c63c1c41",
+    "url": "/scl-season-4/static/media/terrace-blurred.f77412d3.png"
   },
   {
     "revision": "77c8e6fa9d8d72295786b1dba966b60d",
@@ -94,10 +102,6 @@ self.__precacheManifest = [
   {
     "revision": "38f1c428410a32c5e033dcfcb8d36738",
     "url": "/scl-season-4/static/media/veranda-blurred.38f1c428.png"
-  },
-  {
-    "revision": "f77412d3c43efbe1acd9dd41c63c1c41",
-    "url": "/scl-season-4/static/media/terrace-blurred.f77412d3.png"
   },
   {
     "revision": "09f8612f418bb223aab499ee4d5e3499",
@@ -144,11 +148,11 @@ self.__precacheManifest = [
     "url": "/scl-season-4/static/media/veranda.cb03b8f2.png"
   },
   {
-    "revision": "13d83c1715e80a11199b",
+    "revision": "bad5cd61b5b436f97947",
     "url": "/scl-season-4/static/css/2.2a09930e.chunk.css"
   },
   {
-    "revision": "b6857f6a530250df1e9e1e2d3ca5d8c6",
+    "revision": "4c4f30df60935e3de4295e9d0da25003",
     "url": "/scl-season-4/index.html"
   }
 ];
