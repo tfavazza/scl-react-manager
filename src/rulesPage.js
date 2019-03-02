@@ -111,7 +111,7 @@ return(
                   </span>
                   <span className="venue-images">
                         <figure className="venue-figures"><img src={Pub} className="smaller-image" alt="venue" alt-text="Pub 4/7"/>
-                        <figcaption>Pub 4/7 - 16 guests</figcaption></figure>
+                        <figcaption>Pub 3/5</figcaption></figure>
                   </span>
                   <span className="venue-images">
                         <figure className="venue-figures"><img src={HighRise} className="smaller-image" alt="venue" alt-text="High-Rise 3/5"/>

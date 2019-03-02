@@ -406,7 +406,7 @@ onChecker = () => {
     <div className="h4 text-center">
       SCL Manager was made by <a href="https://www.twitter.com/lthummus" rel="noopener noreferrer" target="_blank">LtHummus</a> and <a href="https://www.twitter.com/aforgottentune" rel="noopener noreferrer" target="_blank">aforgottentune</a>, with design and iconography by <a href="https://www.twitter.com/alexandremisson" rel="noopener noreferrer" target="_blank">kaplOw</a>.
       SpyParty is being made by Chris Hecker, and is available for purchase <i>right now</i> on <a href="https://store.steampowered.com/app/329070/SpyParty/" rel="noopener noreferrer" target="_blank">Steam</a> and at <a href="https://www.spyparty.com" rel="noopener noreferrer" target="_blank">SpyParty.com</a>. Special thanks to all these fine folk who helped create SCL and this manager: Steph, 
-      KrazyCaley, Bananaconda, Turnout8, WarningTrack, <a href="#wodar" className="wodar" onClick={this.onWodar}>Wodar</a>, and of course <a href="#checker" className={`wodar ${this.state.checker}`} onClick={this.onChecker}>Checker</a>. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
+      KrazyCaley, Bananaconda, Cleetose, OpiWrites, Turnout8, WarningTrack, <a href="#wodar" className="wodar" onClick={this.onWodar}>Wodar</a>, and of course <a href="#checker" className={`wodar ${this.state.checker}`} onClick={this.onChecker}>Checker</a>. Come hang out with us on <a href="https://discord.gg/spyparty" rel="noopener noreferrer" target="_blank">Discord</a>!
     </div>
   </div>
 </footer>
