@@ -102,9 +102,10 @@ onChecker = () => {
   }
  getPlayerWLD = (player) => {
   if (player) {
-    fetch(this.state.url + 'player/' + player + '/matches')
+    let fixedPlayerName = encodeURIComponent(player);
+    fetch(this.state.url + 'player/' + fixedPlayerName + '/matches')
     .then(res => res.json())
-    .then(res => this.setState({formData: {...this.state.formData, [player]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
+    .then(res => this.setState({formData: {...this.state.formData, [fixedPlayerName]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
   }
 }
   fetchSelectedLeague = (league = null) => {
@@ -115,13 +116,13 @@ onChecker = () => {
     .then(res => res.json())
     .then(res => {
       res.players.forEach(player => this.getPlayerWLD(player.name));
-     // res.players.map(player => player.name).forEach(name => this.getPlayerWLD(name));
       this.setState({standingsData: res})
     })  
   }
   getPlayerInfo = (player) => {
-    this.setState({currentPlayer: player});
-    this.getPlayerSchedule(player);
+    let fixedPlayerName = encodeURIComponent(player)
+    this.setState({currentPlayer: fixedPlayerName});
+    this.getPlayerSchedule(fixedPlayerName);
   }
 
   onCloseModal = (modal) => {
@@ -284,7 +285,8 @@ onChecker = () => {
   }
 
   getPlayerSchedule = (player) => {
-    fetch(this.state.url + 'player/' + player + '/matches')
+    let fixedPlayerName = encodeURIComponent(player)
+    fetch(this.state.url + 'player/' + fixedPlayerName + '/matches')
     .then(res => res.json())
     .then(res => this.setState(
       {schedule: res.matches,
