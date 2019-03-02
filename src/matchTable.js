@@ -42,8 +42,8 @@ return (
     className="-striped -highlight text-center" 
     data={matchData} 
     columns={columns} 
-    defaultPageSize={10}
-    pageSizeOptions={[10, 20, 30, 100]}
+    defaultPageSize={15}
+    pageSizeOptions={[15, 20, 30, 100]}
     />
   </div>
   )

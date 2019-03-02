@@ -31,7 +31,7 @@ const StandingsTable = props => {
   
   const getPlayerLink = row => {
     return row.row.name ? 
-    (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a href={row.row.name} className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) 
+    (<div className="text-left"><span className={`flag-icon flag-icon-${row.original.country}`}></span> <a className="cursor" name={row.row.name} onClick={(e) => props.getPlayerInfo(e.target.name)}>{row.row.name}</a></div>) 
     : ''
   }
 
@@ -79,8 +79,8 @@ return (
     className="-striped -highlight text-center" 
     data={standingsData} 
     columns={columns}
-    defaultPageSize={10}
-    pageSizeOptions={[10, 20, 50, 100]}
+    defaultPageSize={15}
+    pageSizeOptions={[15, 20, 50, 100]}
     />
     </div>
   </div>
