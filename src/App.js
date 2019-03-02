@@ -105,7 +105,7 @@ onChecker = () => {
     let fixedPlayerName = encodeURIComponent(player);
     fetch(this.state.url + 'player/' + fixedPlayerName + '/matches')
     .then(res => res.json())
-    .then(res => this.setState({formData: {...this.state.formData, [fixedPlayerName]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
+    .then(res => this.setState({formData: {...this.state.formData, [player]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
   }
 }
   fetchSelectedLeague = (league = null) => {
