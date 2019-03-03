@@ -127,6 +127,46 @@ hr {
 .Teien {
   background-image: url('./levels/teien-blurred.png');
 }
+#Diamond {
+  background-image: url('./scl_rank_badges/scl_badge_diamond.svg');
+}
+#Platinum {
+  background-image: url('./scl_rank_badges/scl_badge_platinum.svg');
+}
+#Gold {
+  background-image: url('./scl_rank_badges/scl_badge_gold.svg');
+}
+#Silver {
+  background-image: url('./scl_rank_badges/scl_badge_silver.svg');
+}
+#Bronze {
+  background-image: url('./scl_rank_badges/scl_badge_bronze.svg');
+}
+#Copper {
+  background-image: url('./scl_rank_badges/scl_badge_copper.svg');
+}
+#Iron {
+  background-image: url('./scl_rank_badges/scl_badge_iron.svg');
+}
+#Obsidian {
+  background-image: url('./scl_rank_badges/scl_badge_obsidian.svg');
+}
+#Oak {
+  background-image: url('./scl_rank_badges/scl_badge_oak.svg');
+}
+#Bamboo {
+  background-image: url('./scl_rank_badges/scl_badge_bamboo.svg');
+}
+#Challenger {
+  background-image: url('./scl_rank_badges/scl_badge_challenger.svg');
+}
+.big-button {
+    padding-top: 10vh;
+  background-repeat: no-repeat;
+  background-size: 10vh;
+  background-position: top-center;
+  width: 10.5vh;
+}
 
 .white {
   color: white;

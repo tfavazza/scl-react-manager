@@ -91,9 +91,9 @@ onChecker = () => {
   .then(this.toggleModal)
   };
 
-  getSelectedLeague = (e) => {
-    this.setState({selectedLeague: e.target.name})
-    this.fetchSelectedLeague(e.target.name);
+  getSelectedLeague = (name) => {
+    this.setState({selectedLeague: name})
+    this.fetchSelectedLeague(name);
   }
   getGamesForPostSeason = () => {
     fetch(this.state.url + "match/week/" + 11)
@@ -120,9 +120,8 @@ onChecker = () => {
     })  
   }
   getPlayerInfo = (player) => {
-    let fixedPlayerName = encodeURIComponent(player)
-    this.setState({currentPlayer: fixedPlayerName});
-    this.getPlayerSchedule(fixedPlayerName);
+    this.setState({currentPlayer: player});
+    this.getPlayerSchedule(player);
   }
 
   onCloseModal = (modal) => {

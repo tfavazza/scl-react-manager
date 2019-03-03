@@ -12,7 +12,7 @@ const StandingsTable = props => {
         {formData[row.row.name] ? 
           formData[row.row.name].scoreSummary.map((result, index) => {
             if (result === undefined ) {
-              return (<span title="unknown" className="grey courier">U</span>)
+              return (<span title="unknown" key={index} className="grey courier">U</span>)
             } else if (result.startsWith('TieParty')) {
               return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="black courier">D</span></a>)
             }
