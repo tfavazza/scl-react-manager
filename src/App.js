@@ -325,7 +325,7 @@ onChecker = () => {
                 <div id="confirmation">
                   <button className="btn close-button align-right" onClick={this.onCloseForumPost}>x</button>
                   <div dangerouslySetInnerHTML={this.formatForumPost()} />
-                  {this.state.confirmation && <a href="https://secure.spyparty.com/beta/forums/viewtopic.php?f=10&t=3071" target="_blank" rel="noopener noreferrer">Forum Link</a>}
+                  {this.state.confirmation && <a href="https://secure.spyparty.com/beta/forums/viewtopic.php?f=10&t=3255" target="_blank" rel="noopener noreferrer">Forum Link</a>}
                 </div>}
                 </div>
           <div className="fix-index">
