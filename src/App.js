@@ -415,7 +415,7 @@ onChecker = () => {
           }
           {this.state.isVisible.isCalendarVisible && 
             <div>
-                <div className="h4 text-center">Daily matches and weekly casts, hopefully set to your time zone.</div>
+                <div className="h4 text-center">Daily matches and weekly casts, conveniently set to your time zone.</div>
 
             <iframe title="calendar" src="https://teamup.com/ksxvf3qp3b6afup6wz" frameBorder="0" width="100%" height="700"></iframe>
             </div>
