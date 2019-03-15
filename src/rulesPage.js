@@ -35,7 +35,7 @@ return(
       <p>Other high finishers in the Pro Circuit divisions may possibly be able to enter the Tournament of Position. See the rules below specific to the Tournament of Position.</p>
       <h3>Challenger Circuit</h3>
       <p>The Challenger Circuit consists of a single Challenger Division. This division consists of all players who join SCL while a season is in progress and the lowest Pro division reached its capacity of 13 players.</p>
-      <p>Challenger players may challenger each other to a match at any time during the 13 week regular season, except no two players may play more than one match against each other.</p>
+      <p>Challenger players may challenge each other to a match at any time during the 13 week regular season, except no two players may play more than one match against each other.</p>
       <p>The player with the most points in Challenger Division at the end of the regular season is entered into the Tournament of Position. All other Challengers will be incorporated into new Pro Divisions (or promoted into existing ones administratively as needed) in the order they finish in the Challenger event.</p>
       <h2>The Tournament of Position</h2>
       <h3>Format</h3>

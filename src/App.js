@@ -22,7 +22,8 @@ class App extends Component {
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
         isRules: false,
-        isPrevWeeksVisible: true
+        isPrevWeeksVisible: false,
+        isCalendarVisible: true
       },
      gamesThisWeek: [],
      selectedWeekGames: [],
@@ -339,9 +340,11 @@ onChecker = () => {
               <li className={`${this.state.isVisible.isAllGamesVisible && "active"} h3 cursor`}>
                 <a  href="all" className={`${this.state.isVisible.isAllGamesVisible && "active"}`} data-toggle="tab" name="isAllGamesVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Full Schedule</a>
               </li>           
-              <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
+              <li className={`${this.state.isVisible.isCalendarVisible && "active"} h3 cursor`}>
+                <a href="rules" className={`${this.state.isVisible.isCalendarVisible && "active"}`} data-toggle="tab" name="isCalendarVisible" onClick={(e) => this.getActiveTab(e.target.name)}>Calendar</a>
+              </li>               <li className={`${this.state.isVisible.isRules && "active"} h3 cursor`}>
                 <a href="rules" className={`${this.state.isVisible.isRules && "active"}`} data-toggle="tab" name="isRules" onClick={(e) => this.getActiveTab(e.target.name)}>Venues and Rules</a>
-              </li>
+              </li>             
             </ul>
             <br/>
           {this.state.isVisible.isPrevWeeksVisible && 
@@ -399,6 +402,13 @@ onChecker = () => {
           }
           {this.state.isVisible.isRules && 
             <RulesPage/>
+          }
+          {this.state.isVisible.isCalendarVisible && 
+            <div>
+                <div className="h4 text-center">Daily matches and weekly casts, hopefully set to your time zone.</div>
+
+            <iframe src="https://teamup.com/ksxvf3qp3b6afup6wz" frameBorder="0" width="100%" height="700"></iframe>
+            </div>
           }
           </div>
         </div>

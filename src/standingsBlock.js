@@ -6,7 +6,7 @@ import Divisions from './divisions'
 
 const StandingsTable = props => {
   const formData = props.formData;
-  const regexPlayers = /(?:\S+\s)?\S*vs\S*(?:\s\S+)?/;
+  const regexPlayers = /(?<=[-](?!.*[-]))(.*?)(?=\.)/;
   const getWLD = row => {
       return (<div>
         {formData[row.row.name] ? 
@@ -14,12 +14,12 @@ const StandingsTable = props => {
             if (result === undefined ) {
               return (<span title="unknown" key={index} className="grey courier">U</span>)
             } else if (result.startsWith('TieParty')) {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="black courier">D</span></a>)
+              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0]} className="black courier">D</span></a>)
             }
               else if(result.startsWith(row.row.name)) {
-              return (<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="green courier">W</span></a>);
+              return (<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0]} className="green courier">W</span></a>);
             } else {
-              return(<a href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers).map(playerName => playerName.replace(/\s/, ' ').substring(0, playerName.length - 4))} className="red courier">L</span></a>)
+              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0]} className="red courier">L</span></a>)
             }
           }
           ).concat()
