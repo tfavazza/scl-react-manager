@@ -6,6 +6,7 @@ import Divisions from './divisions'
 
 const StandingsTable = props => {
   const formData = props.formData;
+  const regexPlayers = /(?=[-](?!.*[-]))(.*?)(?=\.)/;
   const getWLD = row => {
       return (<div>
         {formData[row.row.name] ? 
@@ -13,12 +14,12 @@ const StandingsTable = props => {
             if (result === undefined ) {
               return (<span title="unknown" key={index} className="grey courier">U</span>)
             } else if (result.startsWith('TieParty')) {
-              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(/(?<=[-](?!.*[-]))(.*?)(?=\.)/)[0]} className="black courier">D</span></a>)
+              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0].slice(2)} className="black courier">D</span></a>)
             }
               else if(result.startsWith(row.row.name)) {
-              return (<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(/(?<=[-](?!.*[-]))(.*?)(?=\.)/)[0]} className="green courier">W</span></a>);
+              return (<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0].slice(2)} className="green courier">W</span></a>);
             } else {
-              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(/(?<=[-](?!.*[-]))(.*?)(?=\.)/)[0]} className="red courier">L</span></a>)
+              return(<a key={index} href={formData[row.row.name].matchUrl[index]}><span title={formData[row.row.name].matchUrl[index].match(regexPlayers)[0].slice(2)} className="red courier">L</span></a>)
             }
           }
           ).concat()
