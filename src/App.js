@@ -307,7 +307,17 @@ onChecker = () => {
       <div className="App">
                           <canvas id="canvas"></canvas>
         <header className="App-header">
-        <h3 className="text-right" style={this.linkStyle}><a className="white" href="http://www.spypartyfans.com">Back to SpyPartyFans</a></h3>
+        <h3 style={this.linkStyle}>
+            <span className="text-left">
+                <a className="white" href="http://www.spypartyfans.com" rel="noopener noreferrer" target="_blank">SpyPartyFans</a>
+            </span> / 
+            <span className="text-right">
+                <a className="white text-right" href="http://www.spypartyfans.com/gamefinder.php" rel="noopener noreferrer" target="_blank"> SCL Game Finder</a>
+            </span> /
+            <span className="text-right">
+                <a className="white text-right" href="http://draft.spypartyfans.com" rel="noopener noreferrer" target="_blank"> SpyParty Draft Tool</a>
+            </span> 
+          </h3>
           <img src={logo} className="App-logo img-fluid" height="375" alt="the logo" />
         </header>
           <div className="container">
@@ -407,7 +417,7 @@ onChecker = () => {
             <div>
                 <div className="h4 text-center">Daily matches and weekly casts, hopefully set to your time zone.</div>
 
-            <iframe src="https://teamup.com/ksxvf3qp3b6afup6wz" frameBorder="0" width="100%" height="700"></iframe>
+            <iframe title="calendar" src="https://teamup.com/ksxvf3qp3b6afup6wz" frameBorder="0" width="100%" height="700"></iframe>
             </div>
           }
           </div>
