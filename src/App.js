@@ -22,8 +22,8 @@ class App extends Component {
         isAllGamesVisible: false, 
         isThisWeekVisible: false,
         isRules: false,
-        isPrevWeeksVisible: false,
-        isCalendarVisible: true
+        isPrevWeeksVisible: true,
+        isCalendarVisible: false
       },
      gamesThisWeek: [],
      selectedWeekGames: [],
