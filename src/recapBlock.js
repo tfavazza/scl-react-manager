@@ -8,7 +8,6 @@ import CopperI from './scl_rank_badges/scl_badge_copper.svg'
 import IronI from './scl_rank_badges/scl_badge_iron.svg'
 import ObsidianI from './scl_rank_badges/scl_badge_obsidian.svg'
 import OakI from './scl_rank_badges/scl_badge_oak.svg'
-import BambooI from './scl_rank_badges/scl_badge_bamboo.svg'
 import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
 import SniperI from './scl_rank_badges/icon_sniper.png'
 import SpyI from './scl_rank_badges/icon_spy.png'
@@ -27,7 +26,6 @@ const RecapBlock = props => {
       Iron: IronI,
       Obsidian: ObsidianI,
       Oak: OakI,
-      Bamboo: BambooI,
       Challenger: ChallengerI 
     };
     const role = {

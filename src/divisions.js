@@ -13,7 +13,6 @@ class Divisions extends Component {
   <div className={`cursor ${this.props.selectedLeague === 'Iron' ? "selected": ''} big-button btn col-md-4 col-sm-4`} name="Iron" id="Iron" onClick={() => this.props.getSelectedLeague("Iron")}>Iron</div>
   <div className={`cursor ${this.props.selectedLeague === 'Obsidian' ? "selected": ''} big-button btn col-md-4 col-sm-4`} name="Obsidian" id="Obsidian" onClick={() => this.props.getSelectedLeague("Obsidian")}>Obsidian</div>
   <div className={`cursor ${this.props.selectedLeague === 'Oak' ? "selected": ''} big-button btn col-md-4 col-sm-4`} name="Oak" id="Oak" onClick={() => this.props.getSelectedLeague("Oak")}>Oak</div>
-  <div className={`cursor ${this.props.selectedLeague === 'Bamboo' ? "selected": ''} big-button btn col-md-4 col-sm-4`} name="Bamboo" id="Bamboo" onClick={() => this.props.getSelectedLeague("Bamboo")}>Bamboo</div>
   <div className={`cursor ${this.props.selectedLeague === 'Challenger' ? "selected": ''} big-button btn col-md-4 col-sm-4`} name="Challenger" id="Challenger" onClick={() => this.props.getSelectedLeague("Challenger")}>Challenger</div>
   </div>
   )
