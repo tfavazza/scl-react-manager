@@ -1,14 +1,14 @@
-import React from 'react';
-import DiamondI from './scl_rank_badges/scl_badge_diamond.svg'
-import PlatinumI from './scl_rank_badges/scl_badge_platinum.svg'
-import GoldI from './scl_rank_badges/scl_badge_gold.svg'
-import SilverI from './scl_rank_badges/scl_badge_silver.svg'
-import BronzeI from './scl_rank_badges/scl_badge_bronze.svg'
-import CopperI from './scl_rank_badges/scl_badge_copper.svg'
-import IronI from './scl_rank_badges/scl_badge_iron.svg'
-import ObsidianI from './scl_rank_badges/scl_badge_obsidian.svg'
-import OakI from './scl_rank_badges/scl_badge_oak.svg'
-import ChallengerI from './scl_rank_badges/scl_badge_challenger.svg'
+import React from 'react'
+import DiamondI from './scl_prank_badges/scl_badge_diamond.png'
+import PlatinumI from './scl_prank_badges/scl_badge_platinum.png'
+import GoldI from './scl_prank_badges/scl_badge_gold.png'
+import SilverI from './scl_prank_badges/scl_badge_silver.png'
+import BronzeI from './scl_prank_badges/scl_badge_bronze.png'
+import CopperI from './scl_prank_badges/scl_badge_copper.png'
+import IronI from './scl_prank_badges/scl_badge_iron.png'
+import ObsidianI from './scl_prank_badges/scl_badge_obsidian.png'
+import OakI from './scl_prank_badges/scl_badge_oak.png'
+import ChallengerI from './scl_prank_badges/scl_badge_challenger.png'
 
 const PlayerSchedule = props => {
       const schedule = props.schedule || [];
