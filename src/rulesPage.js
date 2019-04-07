@@ -10,6 +10,7 @@ import Pub from './levels/pub.png';
 import Terrace from './levels/terrace.png';
 import Veranda from './levels/veranda.png';
 import Teien from './levels/teien.png'
+import Aquarium from './levels/aquarium.png'
 const RulesPage = () => {
 return(
 <div>
@@ -132,6 +133,10 @@ return(
                   <span className="venue-images">
                         <figure className="venue-figures"><img src={Teien} className="smaller-image" alt="venue" alt-text="Teien 4/8"/>
                         <figcaption>Teien 4/8</figcaption></figure>
+                  </span>
+                  <span className="venue-images">
+                        <figure className="venue-figures"><img src={Aquarium} className="smaller-image" alt="venue" alt-text="Aquarium 4/8"/>
+                        <figcaption>Aquarium 4/8</figcaption></figure>
                   </span>
             </div>
             <h2>Scheduling and Miscellaneous</h2>

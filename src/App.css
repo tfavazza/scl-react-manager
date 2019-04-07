@@ -127,6 +127,9 @@ hr {
 .Teien {
   background-image: url('./levels/teien-blurred.png');
 }
+.Aquarium {
+  background-image: url('./levels/aquarium-blurred.png');
+}
 #Diamond {
   background-image: url('./scl_rank_badges/scl_badge_diamond.svg');
 }
@@ -230,6 +233,9 @@ hr {
 .smaller-image {
   max-height: 100%;
   max-width: 100%;
+}
+.leagues {
+  display: inline-block;
 }
 .cursor {
   cursor: pointer;
