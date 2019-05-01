@@ -11,6 +11,9 @@ const StandingsTable = props => {
       return (<div>
         {formData[row.row.name] ? 
           formData[row.row.name].scoreSummary.map((result, index) => {
+            if (formData[row.row.name].matchUrl[index] === 'no') {
+              return (<span title="unknown" key={index} className="grey courier">U</span>)
+            } else
             if (result === undefined ) {
               return (<span title="unknown" key={index} className="grey courier">U</span>)
             } else if (result.startsWith('TieParty')) {

@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      wodar: null,
+      wodar: false,
       checker: null,
       matchData: [],
        isVisible: {
@@ -106,7 +106,7 @@ onChecker = () => {
     let fixedPlayerName = encodeURIComponent(player);
     fetch(this.state.url + 'player/' + fixedPlayerName + '/matches')
     .then(res => res.json())
-    .then(res => this.setState({formData: {...this.state.formData, [player]: {'scoreSummary': res.matches.map(match => match.scoreSummary), 'matchUrl':  res.matches.map(match => match.matchUrl)}} }))
+    .then(res => this.setState({formData: {...this.state.formData, [player]: {'status': res.matches.map(match => match.status),'scoreSummary': res.matches.map(match => match.scoreSummary ? match.scoreSummary : match.forfeitText), 'matchUrl':  res.matches.map(match => match.matchUrl ? match.matchUrl : 'no')}} }))
   }
 }
   fetchSelectedLeague = (league = null) => {
@@ -305,7 +305,7 @@ onChecker = () => {
   render() {
     return (
       <div className="App">
-                          <canvas id="canvas"></canvas>
+      <canvas id="canvas"></canvas>
         <header className="App-header">
         <h3 style={this.linkStyle}>
             <span className="text-left">
