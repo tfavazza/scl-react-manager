@@ -4,16 +4,16 @@
   "private": true,
   "homepage": "https://tfavazza.github.io/scl-season-4",
   "dependencies": {
-    "flag-icon-css": "^3.3.0",
+    "flag-icon-css": "^3.4.2",
     "fstream": "^1.0.12",
     "gh-pages": "^1.2.0",
     "match-sorter": "^2.3.0",
-    "npm": "^6.9.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "npm": "^6.11.3",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-responsive-modal": "^3.6.0",
-    "react-scripts": "^3.0.1",
-    "react-table": "^6.10.0"
+    "react-scripts": "^3.2.0",
+    "react-table": "^6.10.3"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -24,7 +24,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "https-proxy-agent": "^2.2.1"
+    "https-proxy-agent": "^2.2.2"
   },
   "browserslist": [
     ">0.2%",
