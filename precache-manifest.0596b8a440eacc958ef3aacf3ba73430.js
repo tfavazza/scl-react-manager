@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2def206992e2c71227bc44fd32ca9092",
+    "revision": "0964a8c1f25723f0fc82401d6bdfd1c0",
     "url": "/scl-react-manager/index.html"
   },
   {
-    "revision": "ffb80d67aa33baeea574",
-    "url": "/scl-react-manager/static/css/2.d4b275d9.chunk.css"
+    "revision": "e9a62a770c3bacb2a4c6",
+    "url": "/scl-react-manager/static/css/2.d694ff75.chunk.css"
   },
   {
-    "revision": "183209c2b6fc702cd4c8",
-    "url": "/scl-react-manager/static/css/main.1fa92967.chunk.css"
+    "revision": "9d05aadefa086b478167",
+    "url": "/scl-react-manager/static/css/main.016e5e39.chunk.css"
   },
   {
-    "revision": "ffb80d67aa33baeea574",
-    "url": "/scl-react-manager/static/js/2.f1842aa9.chunk.js"
+    "revision": "e9a62a770c3bacb2a4c6",
+    "url": "/scl-react-manager/static/js/2.103a8a78.chunk.js"
   },
   {
-    "revision": "183209c2b6fc702cd4c8",
-    "url": "/scl-react-manager/static/js/main.bd99744a.chunk.js"
+    "revision": "45eae13c223267eff6b6d9449fa01039",
+    "url": "/scl-react-manager/static/js/2.103a8a78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1687d4231086ecb6246",
-    "url": "/scl-react-manager/static/js/runtime~main.41e5963e.js"
+    "revision": "9d05aadefa086b478167",
+    "url": "/scl-react-manager/static/js/main.f07488a6.chunk.js"
+  },
+  {
+    "revision": "364045ca90e1609634c7",
+    "url": "/scl-react-manager/static/js/runtime-main.b0a6b851.js"
   },
   {
     "revision": "a12e393b4ca82884a1912f86c29b0ce3",
