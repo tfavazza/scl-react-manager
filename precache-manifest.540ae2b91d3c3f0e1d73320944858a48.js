@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0964a8c1f25723f0fc82401d6bdfd1c0",
+    "revision": "8e8793043026da6b84bef4b972681237",
     "url": "/scl-react-manager/index.html"
   },
   {
-    "revision": "e9a62a770c3bacb2a4c6",
+    "revision": "6c028030469782b460a0",
     "url": "/scl-react-manager/static/css/2.d694ff75.chunk.css"
   },
   {
-    "revision": "9d05aadefa086b478167",
+    "revision": "67b0134c6e518bc5b189",
     "url": "/scl-react-manager/static/css/main.016e5e39.chunk.css"
   },
   {
-    "revision": "e9a62a770c3bacb2a4c6",
-    "url": "/scl-react-manager/static/js/2.103a8a78.chunk.js"
+    "revision": "6c028030469782b460a0",
+    "url": "/scl-react-manager/static/js/2.5f4b69b7.chunk.js"
   },
   {
     "revision": "45eae13c223267eff6b6d9449fa01039",
-    "url": "/scl-react-manager/static/js/2.103a8a78.chunk.js.LICENSE.txt"
+    "url": "/scl-react-manager/static/js/2.5f4b69b7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9d05aadefa086b478167",
-    "url": "/scl-react-manager/static/js/main.f07488a6.chunk.js"
+    "revision": "67b0134c6e518bc5b189",
+    "url": "/scl-react-manager/static/js/main.3f141ce9.chunk.js"
   },
   {
     "revision": "364045ca90e1609634c7",
@@ -32,72 +32,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scl-react-manager/static/media/aquarium-blurred.a12e393b.png"
   },
   {
-    "revision": "68076bd9743ef9e9826333fd5c34ca8d",
-    "url": "/scl-react-manager/static/media/aquarium.68076bd9.png"
-  },
-  {
     "revision": "b48765f96e4371f9e78e6330202a951f",
     "url": "/scl-react-manager/static/media/balcony-blurred.b48765f9.png"
-  },
-  {
-    "revision": "dc54615e846cdeb5a41c4f71a2197826",
-    "url": "/scl-react-manager/static/media/balcony.dc54615e.png"
   },
   {
     "revision": "f78769242fb5c0ec2f775f959c8ee8cd",
     "url": "/scl-react-manager/static/media/ballroom-blurred.f7876924.png"
   },
   {
-    "revision": "5dbb6034397025f4d0e54d833cf76973",
-    "url": "/scl-react-manager/static/media/ballroom.5dbb6034.png"
-  },
-  {
     "revision": "a4b56e119a5a50f45b4b75b430094205",
     "url": "/scl-react-manager/static/media/courtyard-blurred.a4b56e11.png"
-  },
-  {
-    "revision": "713a8bf41eb05bbc9b716747c4d96083",
-    "url": "/scl-react-manager/static/media/courtyard.713a8bf4.png"
   },
   {
     "revision": "be2214c3b2c065a094500829abea74e3",
     "url": "/scl-react-manager/static/media/gallery-blurred.be2214c3.png"
   },
   {
-    "revision": "a1052b9c10f97508539be000f30390a4",
-    "url": "/scl-react-manager/static/media/gallery.a1052b9c.png"
-  },
-  {
     "revision": "307ef4f6e791b6c5e9b9b6ecfcb4daf2",
     "url": "/scl-react-manager/static/media/high-rise-blurred.307ef4f6.png"
-  },
-  {
-    "revision": "f8af0079c158b50e2962f117dc155563",
-    "url": "/scl-react-manager/static/media/high-rise.f8af0079.png"
   },
   {
     "revision": "9361235ed229ef69084a9930dec18552",
     "url": "/scl-react-manager/static/media/library-blurred.9361235e.png"
   },
   {
-    "revision": "26bdfb2fa3c63277ea26327dcc68b332",
-    "url": "/scl-react-manager/static/media/library.26bdfb2f.png"
-  },
-  {
     "revision": "77c8e6fa9d8d72295786b1dba966b60d",
     "url": "/scl-react-manager/static/media/moderne-blurred.77c8e6fa.png"
   },
   {
-    "revision": "bb76d5f0a5aef8da7a46004164bfd385",
-    "url": "/scl-react-manager/static/media/moderne.bb76d5f0.png"
-  },
-  {
     "revision": "29cb205402fe1e2604c0ff87b20c03a3",
     "url": "/scl-react-manager/static/media/pub-blurred.29cb2054.png"
-  },
-  {
-    "revision": "017beaa880b8eceb3689538e2d4338c7",
-    "url": "/scl-react-manager/static/media/pub.017beaa8.png"
   },
   {
     "revision": "406b4552529750daefb460384fea3141",
@@ -152,23 +116,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scl-react-manager/static/media/teien-blurred.10e11d88.png"
   },
   {
-    "revision": "e56fece1545908df9edaae3daf27ea1d",
-    "url": "/scl-react-manager/static/media/teien.e56fece1.png"
-  },
-  {
     "revision": "f77412d3c43efbe1acd9dd41c63c1c41",
     "url": "/scl-react-manager/static/media/terrace-blurred.f77412d3.png"
   },
   {
-    "revision": "d95db2d97a4d8c4776c038c4bec6da92",
-    "url": "/scl-react-manager/static/media/terrace.d95db2d9.png"
-  },
-  {
     "revision": "38f1c428410a32c5e033dcfcb8d36738",
     "url": "/scl-react-manager/static/media/veranda-blurred.38f1c428.png"
-  },
-  {
-    "revision": "cb03b8f263df06f472e57624b40f8f62",
-    "url": "/scl-react-manager/static/media/veranda.cb03b8f2.png"
   }
 ]);
