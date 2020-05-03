@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8e8793043026da6b84bef4b972681237",
+    "revision": "27b9257fc98ac84fe128bdccdcfef527",
     "url": "/scl-react-manager/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scl-react-manager/static/css/2.d694ff75.chunk.css"
   },
   {
-    "revision": "67b0134c6e518bc5b189",
-    "url": "/scl-react-manager/static/css/main.016e5e39.chunk.css"
+    "revision": "f931ad8b4a89e86fc575",
+    "url": "/scl-react-manager/static/css/main.30af3222.chunk.css"
   },
   {
     "revision": "6c028030469782b460a0",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/scl-react-manager/static/js/2.5f4b69b7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "67b0134c6e518bc5b189",
+    "revision": "f931ad8b4a89e86fc575",
     "url": "/scl-react-manager/static/js/main.3f141ce9.chunk.js"
   },
   {
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "29cb205402fe1e2604c0ff87b20c03a3",
     "url": "/scl-react-manager/static/media/pub-blurred.29cb2054.png"
+  },
+  {
+    "revision": "b931d60a3eb78af7872facd9ab13f448",
+    "url": "/scl-react-manager/static/media/redwoods-blurred.b931d60a.png"
   },
   {
     "revision": "406b4552529750daefb460384fea3141",
