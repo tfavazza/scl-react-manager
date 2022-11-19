@@ -6,7 +6,7 @@
   "dependencies": {
     "flag-icon-css": "^3.4.5",
     "fstream": "^1.0.12",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^4.0.0",
     "match-sorter": "^2.3.0",
     "npm": "^6.14.6",
     "react": "^16.12.0",
